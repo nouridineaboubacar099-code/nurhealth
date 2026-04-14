@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "690436144475",
+    "project_id": "nurhealth-e9740",
+    "storage_bucket": "nurhealth-e9740.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690436144475:android:8835468c12f5c0128bee7e",
+        "android_client_info": {
+          "package_name": "com.example.nurhealth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlibTYUZFEhlaqi9SOoPSIy0adVQMJKd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
