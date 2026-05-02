@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="HR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>NurHealth — نور الصحة والإيمان</title>
+
+<!-- ═══ PWA META TAGS ═══ -->
+<meta name="application-name" content="NurHealth"/>
+<meta name="description" content="Islamic lifestyle app — Prayer times, Library, Kids Science, Charity · نور الصحة والإيمان"/>
+<meta name="theme-color" content="#c9a84c"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="NurHealth"/>
+<meta name="msapplication-TileColor" content="#0a1628"/>
+<meta name="msapplication-TileImage" content="icon-192.png"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="NurHealth — Light of Health & Faith"/>
+<meta property="og:description" content="Islamic app with prayer times, Quran, Hadiths, Kids Science & Charity"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="icon-512.png"/>
+
+<!-- Icons -->
+<link rel="manifest" href="manifest.json"/>
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
+<link rel="apple-touch-icon" href="icon-192.png"/>
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_OJMEeYdsfqSil2_semw1RkkmT7Ha6M0bcuQei2hwLoQ80E2D5xfcOnychD9SddO" charset="UTF-8"></script><style>
+:root{
+  --g:#c9a84c;--g2:#e8c97a;--t:#0d6e6e;--t2:#12a5a5;
+  --dk:#0a1628;--dk2:#0d2244;--red:#c0392b;--red2:#e74c3c;
+  --pur:#6c3483;--grn:#1a7a4a;--grn2:#27ae60;
+  --kids-bg:#1a0a2e;--kids-acc:#f39c12;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;background:var(--dk);color:#e8e0cc;min-height:100vh;overflow-x:hidden}
+.bgfx{position:fixed;inset:0;z-index:0;
+  background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(13,110,110,.15) 0%,transparent 60%),
+  radial-gradient(ellipse 60% 80% at 80% 90%,rgba(201,168,76,.08) 0%,transparent 60%),
+  linear-gradient(160deg,#0a1628 0%,#0d2244 50%,#0a1628 100%);}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(1px 1px at 12% 18%,rgba(201,168,76,.7) 0%,transparent 100%),
+  radial-gradient(1px 1px at 38% 52%,rgba(255,255,255,.45) 0%,transparent 100%),
+  radial-gradient(1.5px 1.5px at 68% 14%,rgba(201,168,76,.6) 0%,transparent 100%),
+  radial-gradient(1px 1px at 88% 42%,rgba(255,255,255,.4) 0%,transparent 100%),
+  radial-gradient(1px 1px at 54% 78%,rgba(201,168,76,.45) 0%,transparent 100%),
+  radial-gradient(1.5px 1.5px at 79% 68%,rgba(201,168,76,.55) 0%,transparent 100%),
+  radial-gradient(1px 1px at 22% 88%,rgba(255,255,255,.35) 0%,transparent 100%);}
+.app{position:relative;z-index:1;max-width:430px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding-bottom:56px}
+
+/* ── LANG BAR ── */
+.lang-bar{display:flex;justify-content:center;gap:5px;padding:7px 10px 5px;background:rgba(0,0,0,.55);border-bottom:1px solid rgba(201,168,76,.12)}
+.lb{padding:3px 9px;border-radius:14px;border:1px solid rgba(201,168,76,.2);background:rgba(255,255,255,.04);color:rgba(255,255,255,.45);cursor:pointer;font-size:10.5px;font-weight:800;letter-spacing:.5px;transition:all .25s}
+.lb.on{background:linear-gradient(135deg,var(--t),var(--g));color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(201,168,76,.3)}
+
+/* ── HEADER ── */
+header{text-align:center;padding:16px 14px 8px;border-bottom:1px solid rgba(201,168,76,.18);background:rgba(10,22,40,.8);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.logo-r{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:2px}
+.logo-i{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--t),var(--g));display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 0 20px rgba(201,168,76,.45);animation:glw 3s infinite}
+@keyframes glw{0%,100%{box-shadow:0 0 20px rgba(201,168,76,.4)}50%{box-shadow:0 0 38px rgba(201,168,76,.75)}}
+h1{font-family:'Cinzel',serif;font-size:20px;letter-spacing:2px;background:linear-gradient(90deg,var(--g),var(--t2),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:sh 4s linear infinite}
+@keyframes sh{0%{background-position:0%}100%{background-position:200%}}
+.tag{font-size:9.5px;color:rgba(201,168,76,.6);letter-spacing:2.5px;text-transform:uppercase}
+.dts{display:flex;justify-content:space-between;padding:6px 16px;background:rgba(13,110,110,.1);font-size:10.5px;color:rgba(255,255,255,.5)}
+
+/* ── BOTTOM NAV ── */
+.bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:200;
+  background:rgba(10,22,40,.97);border-top:1px solid rgba(201,168,76,.15);
+  display:flex;align-items:stretch;backdrop-filter:blur(12px)}
+.bn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 2px 5px;
+  border:none;background:transparent;cursor:pointer;color:rgba(255,255,255,.38);transition:all .25s;font-family:'Nunito',sans-serif}
+.bn .ico{font-size:19px;margin-bottom:2px;transition:transform .2s}
+.bn .lbl{font-size:8.5px;font-weight:700;letter-spacing:.3px}
+.bn.on{color:var(--g)}
+.bn.on .ico{transform:translateY(-3px)}
+.bn.don-bn.on{color:var(--red2)}
+
+/* ── CONTENT ── */
+.pg{display:none;flex:1;overflow-y:auto;padding:12px 13px 14px;animation:fu .35s ease}
+.pg.on{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.stl{font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:2px;color:var(--g);text-transform:uppercase;margin-bottom:12px;padding-bottom:5px;border-bottom:1px solid rgba(201,168,76,.18);display:flex;align-items:center;gap:6px}
+
+/* ── CARDS ── */
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:13px;margin-bottom:10px;transition:all .25s}
+.card:hover{background:rgba(255,255,255,.07);transform:translateY(-1px)}
+.card-gold{border-color:rgba(201,168,76,.2);background:rgba(201,168,76,.04)}
+.card-teal{border-color:rgba(18,165,165,.2);background:rgba(18,165,165,.04)}
+.card-red{border-color:rgba(192,57,43,.25);background:rgba(192,57,43,.06)}
+.card-grn{border-color:rgba(39,174,96,.2);background:rgba(39,174,96,.04)}
+
+/* ══ TÉLÉMÉDECINE ══ */
+.ctab{padding:7px 12px;border-radius:20px;border:1px solid rgba(201,168,76,.25);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);cursor:pointer;font-size:11px;font-weight:700;white-space:nowrap;transition:all .2s;font-family:'Nunito',sans-serif}
+.ctab.on{background:linear-gradient(135deg,var(--t),var(--g));color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(201,168,76,.3)}
+.ctab-content{display:none}
+.ctab-content.on{display:block}
+
+/* Carte médecin */
+.med-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:14px;padding:14px;margin-bottom:12px;transition:all .25s}
+.med-top{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.med-ava{font-size:36px;line-height:1}
+.med-info{flex:1}
+.med-name{font-weight:800;color:#D4AF37;font-size:14px;margin-bottom:2px}
+.med-spec{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:2px}
+.med-loc{font-size:10.5px;color:rgba(255,255,255,.4);margin-bottom:4px}
+.med-stat{font-size:11.5px;font-weight:700}
+.med-stat.dispo{color:#2ecc71}
+.med-stat.indispo{color:#e74c3c}
+.med-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.mtag{padding:3px 8px;border-radius:10px;background:rgba(13,110,110,.2);border:1px solid rgba(18,165,165,.2);color:#12a5a5;font-size:10px;font-weight:700}
+.med-btns{display:flex;gap:6px}
+.mbtn{flex:1;padding:8px 4px;border-radius:9px;font-size:10.5px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;border:none;transition:all .2s}
+.mbtn-rdv{background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#D4AF37}
+.mbtn-call{background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.3)!important;color:#2ecc71}
+.mbtn-wa{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3)!important;color:#25d366}
+
+/* Input réutilisable */
+.rinput{width:100%;padding:10px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);border-radius:9px;color:#fff;margin-bottom:8px;font-size:12px;font-family:'Nunito',sans-serif;outline:none}
+.rinput:focus{border-color:rgba(201,168,76,.5);background:rgba(255,255,255,.08)}
+
+/* Urgences */
+.urg-card{display:flex;align-items:center;gap:12px;background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.2);border-radius:12px;padding:12px;margin-bottom:8px}
+.urg-ico{font-size:24px}
+.urg-info{flex:1}
+.urg-name{font-size:12px;font-weight:700;color:rgba(255,255,255,.8)}
+.urg-num{font-size:16px;font-weight:800;color:#e74c3c}
+.urg-btn{padding:8px 14px;background:linear-gradient(135deg,#c0392b,#e74c3c);border:none;border-radius:8px;color:#fff;font-weight:800;font-size:11px;cursor:pointer;text-decoration:none;white-space:nowrap}
+
+/* Maladies */
+.mal-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;margin-bottom:8px;cursor:pointer;transition:all .2s}
+.mal-card:hover{background:rgba(255,255,255,.07);border-color:rgba(201,168,76,.2)}
+.mal-top{display:flex;align-items:center;gap:10px}
+.mal-ico{font-size:26px}
+.mal-name{font-weight:800;color:#e8e0cc;font-size:13px}
+.mal-cat{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px}
+.mal-symp{font-size:11px;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.5}
+.mal-detail{background:rgba(13,110,110,.08);border:1px solid rgba(18,165,165,.2);border-radius:12px;padding:14px;margin-bottom:10px}
+.mal-d-ttl{font-weight:800;color:#12a5a5;font-size:13px;margin-bottom:8px}
+.mal-section{margin-bottom:10px}
+.mal-section-ttl{font-size:11px;color:#D4AF37;font-weight:800;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.mal-section-txt{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.7}
+.mal-urgent{background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.3);border-radius:8px;padding:8px;font-size:11px;color:#e74c3c;font-weight:700;margin-top:8px;text-align:center}
+
+/* Centres de santé */
+.centre-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:11px;padding:11px;margin-bottom:8px;display:flex;gap:10px;align-items:center}
+.centre-ico{font-size:22px}
+.centre-info{flex:1}
+.centre-name{font-weight:800;font-size:12px;color:#e8e0cc}
+.centre-dist{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px}
+.centre-type{font-size:10px;color:#12a5a5;margin-top:1px}
+.centre-btn{padding:6px 10px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);border-radius:7px;color:#D4AF37;font-size:10px;font-weight:700;text-decoration:none;white-space:nowrap}
+
+/* IA Chat */
+.ia-msg{display:flex;gap:8px;margin-bottom:10px;align-items:flex-start}
+.ia-msg.ia-user{flex-direction:row-reverse}
+.ia-ava{font-size:20px;flex-shrink:0;margin-top:2px}
+.ia-txt{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:9px 11px;font-size:11.5px;color:rgba(255,255,255,.8);line-height:1.6;max-width:85%}
+.ia-msg.ia-user .ia-txt{background:rgba(13,110,110,.2);border-color:rgba(18,165,165,.2);color:#e8e0cc}
+.ia-quick{padding:6px 10px;background:rgba(13,110,110,.15);border:1px solid rgba(18,165,165,.2);border-radius:14px;color:#12a5a5;font-size:10px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all .2s}
+.ia-quick:hover{background:rgba(13,110,110,.3)}
+.ia-loading{display:flex;gap:4px;align-items:center;padding:8px 11px}
+.ia-dot{width:6px;height:6px;border-radius:50%;background:#12a5a5;animation:bounce .8s infinite}
+.ia-dot:nth-child(2){animation-delay:.15s}
+.ia-dot:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ── PRAYER ── */
+.hijri-box{background:linear-gradient(135deg,rgba(13,110,110,.22),rgba(201,168,76,.08));border:1px solid rgba(201,168,76,.22);border-radius:13px;padding:13px;text-align:center;margin-bottom:13px}
+.h-ar{font-family:'Amiri',serif;font-size:22px;color:var(--g);margin-bottom:3px}
+.h-mo{font-size:12.5px;color:var(--t2);font-weight:700}
+.h-gr{font-size:10.5px;color:rgba(255,255,255,.38);margin-top:2px}
+.pg-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
+.pc{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.12);border-radius:10px;padding:10px;text-align:center;transition:all .25s}
+.pc.nxt{border-color:var(--g);background:rgba(201,168,76,.09);box-shadow:0 0 12px rgba(201,168,76,.2)}
+.pn{font-size:11.5px;font-weight:800;color:var(--g2);margin-bottom:2px}
+.par{font-family:'Amiri',serif;font-size:12px;color:rgba(201,168,76,.5)}
+.pt{font-size:16px;font-weight:300;color:#fff}
+.ntag{display:inline-block;background:var(--g);color:var(--dk);font-size:7.5px;font-weight:800;padding:1px 5px;border-radius:7px;letter-spacing:1px;margin-top:2px}
+
+/* ── LIBRARY ── */
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}
+.book-card{border-radius:12px;padding:14px 12px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;text-align:center}
+.book-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.5));pointer-events:none}
+.book-card.nawawi{background:linear-gradient(135deg,#1a3a2a,#2d6a4f);border:1px solid rgba(39,174,96,.3)}
+.book-card.bulugh{background:linear-gradient(135deg,#1a2a3a,#2d5a8a);border:1px solid rgba(52,152,219,.3)}
+.book-card.riadus{background:linear-gradient(135deg,#2a1a3a,#6c3483);border:1px solid rgba(155,89,182,.3)}
+.book-card.quran{background:linear-gradient(135deg,#3a2a00,#8a6000);border:1px solid rgba(201,168,76,.4)}
+.book-ico{font-size:30px;margin-bottom:6px}
+.book-ttl{font-family:'Cinzel',serif;font-size:10.5px;font-weight:700;color:#fff;line-height:1.3}
+.book-sub{font-size:9px;color:rgba(255,255,255,.5);margin-top:3px}
+.book-badge{position:absolute;top:7px;right:7px;background:var(--g);color:var(--dk);font-size:7.5px;font-weight:800;padding:2px 5px;border-radius:6px}
+
+/* Book reader */
+.book-reader{display:none}
+.book-reader.on{display:block}
+.reader-header{display:flex;align-items:center;gap:9px;margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid rgba(201,168,76,.15)}
+.back-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:6px 11px;cursor:pointer;color:rgba(255,255,255,.7);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;transition:all .25s}
+.back-btn:hover{background:rgba(255,255,255,.12)}
+.reader-ttl{font-family:'Cinzel',serif;font-size:13px;color:var(--g);flex:1}
+.hadith-item{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.12);border-radius:11px;padding:14px;margin-bottom:9px}
+.h-num{font-family:'Cinzel',serif;font-size:10px;color:var(--g);letter-spacing:1.5px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.h-num::after{content:'';flex:1;height:1px;background:rgba(201,168,76,.15)}
+.h-arabic{font-family:'Amiri',serif;font-size:17px;color:var(--g2);direction:rtl;text-align:right;line-height:1.9;margin-bottom:8px}
+.h-text{font-size:12px;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:5px}
+.h-source{font-size:10px;color:var(--t2);font-weight:700}
+.search-bar{width:100%;padding:9px 12px;border-radius:9px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.18);color:#fff;font-family:'Nunito',sans-serif;font-size:12px;outline:none;margin-bottom:12px;transition:border-color .25s}
+.search-bar:focus{border-color:var(--g)}
+.search-bar::placeholder{color:rgba(255,255,255,.28)}
+
+/* ── KIDS / SCIENCE ── */
+#kids-page{background:linear-gradient(160deg,#0d0a2e,#1a0a3e,#0a1a2e)}
+.kids-hero{text-align:center;padding:16px 14px;background:rgba(0,0,0,.3);border-radius:14px;margin-bottom:14px;border:1px solid rgba(243,156,18,.2)}
+.kids-ico{font-size:40px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.kids-ttl{font-family:'Cinzel',serif;font-size:17px;background:linear-gradient(90deg,#f39c12,#e74c3c,#9b59b6,#3498db);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:300%;animation:sh 3s linear infinite;margin-bottom:5px}
+.kids-sub{font-size:11px;color:rgba(255,255,255,.55)}
+.sci-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}
+.sci-card{border-radius:12px;padding:14px 10px;cursor:pointer;text-align:center;transition:all .3s;border:1px solid rgba(255,255,255,.1)}
+.sci-card:hover{transform:scale(1.04)}
+.sc-space{background:linear-gradient(135deg,#0d0d2b,#1a1a6e)}
+.sc-body{background:linear-gradient(135deg,#0a2a0a,#1a5c1a)}
+.sc-water{background:linear-gradient(135deg,#0a1a3a,#1a4a8a)}
+.sc-animals{background:linear-gradient(135deg,#2a1500,#6b3a00)}
+.sc-plants{background:linear-gradient(135deg,#0a2a1a,#1a6b3a)}
+.sc-weather{background:linear-gradient(135deg,#1a2a3a,#4a7a9b)}
+.sc-ico{font-size:28px;margin-bottom:6px}
+.sc-ttl{font-size:11.5px;font-weight:800;color:#fff;margin-bottom:2px}
+.sc-cnt{font-size:9.5px;color:rgba(255,255,255,.45)}
+
+/* Science reader */
+.sci-reader{display:none}.sci-reader.on{display:block}
+.fact-card{background:rgba(255,255,255,.04);border-radius:12px;padding:15px;margin-bottom:9px;border-left:3px solid var(--kids-acc)}
+.fact-ico{font-size:22px;margin-bottom:6px}
+.fact-ttl{font-size:13px;font-weight:800;color:#fff;margin-bottom:5px}
+.fact-txt{font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.6}
+.fact-islam{font-size:10.5px;color:rgba(201,168,76,.8);margin-top:7px;font-style:italic;padding:6px 9px;background:rgba(201,168,76,.07);border-radius:7px}
+
+/* ── QUIZ ── */
+.quiz-wrap{background:rgba(255,255,255,.03);border-radius:14px;padding:16px;border:1px solid rgba(201,168,76,.15)}
+.quiz-cat{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:13px}
+.qcat-btn{padding:11px 8px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);cursor:pointer;text-align:center;font-family:'Nunito',sans-serif;color:rgba(255,255,255,.65);font-weight:700;font-size:11px;transition:all .25s}
+.qcat-btn:hover,.qcat-btn.active{background:rgba(201,168,76,.15);border-color:var(--g);color:var(--g)}
+.qcat-ico{font-size:22px;margin-bottom:4px;display:block}
+.quiz-game{display:none}.quiz-game.on{display:block;animation:fu .3s ease}
+.qprog{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.qprog-bar{flex:1;height:5px;background:rgba(255,255,255,.08);border-radius:5px;margin:0 10px;overflow:hidden}
+.qprog-fill{height:100%;background:linear-gradient(90deg,var(--g),var(--t2));border-radius:5px;transition:width .5s}
+.qnum{font-size:10.5px;color:rgba(255,255,255,.4)}
+.qscore{font-size:11px;color:var(--g);font-weight:800}
+.question-box{background:linear-gradient(135deg,rgba(13,110,110,.15),rgba(201,168,76,.08));border:1px solid rgba(201,168,76,.18);border-radius:12px;padding:16px;margin-bottom:12px;text-align:center}
+.q-arabic-q{font-family:'Amiri',serif;font-size:18px;color:var(--g);direction:rtl;margin-bottom:8px}
+.q-txt{font-size:13px;font-weight:700;color:#fff;line-height:1.5}
+.opts{display:grid;gap:7px}
+.opt{padding:11px 13px;border-radius:9px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);cursor:pointer;font-family:'Nunito',sans-serif;font-size:12px;color:rgba(255,255,255,.8);text-align:left;transition:all .25s;font-weight:600}
+.opt:hover{background:rgba(201,168,76,.1);border-color:var(--g)}
+.opt.correct{background:rgba(39,174,96,.2);border-color:var(--grn2);color:#2ecc71}
+.opt.wrong{background:rgba(192,57,43,.2);border-color:var(--red);color:var(--red2)}
+.opt.disabled{cursor:default;pointer-events:none}
+.explain-box{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-radius:9px;padding:11px;margin-top:9px;font-size:11.5px;color:rgba(255,255,255,.75);line-height:1.6;display:none}
+.explain-box.on{display:block;animation:fu .3s ease}
+.next-q{width:100%;padding:11px;border-radius:9px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--t),var(--t2));color:#fff;font-family:'Cinzel',serif;font-size:12px;font-weight:700;margin-top:9px;transition:all .25s;display:none}
+.next-q.on{display:block}
+.next-q:hover{transform:translateY(-2px)}
+.quiz-result{display:none;text-align:center;padding:20px}.quiz-result.on{display:block;animation:fu .4s ease}
+.result-ico{font-size:50px;margin-bottom:10px}
+.result-ttl{font-family:'Cinzel',serif;font-size:18px;color:var(--g);margin-bottom:7px}
+.result-score{font-size:28px;font-weight:800;color:#fff;margin-bottom:12px}
+.restart-btn{padding:11px 26px;border-radius:10px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--t),var(--g));color:#fff;font-family:'Cinzel',serif;font-size:12.5px;font-weight:700}
+
+/* ── DONATE ── */
+.don-hero{background:linear-gradient(160deg,rgba(120,0,0,.3),rgba(192,57,43,.15),rgba(201,168,76,.08));border:1px solid rgba(192,57,43,.28);border-radius:14px;padding:20px 16px;text-align:center;margin-bottom:14px;position:relative;overflow:hidden}
+.don-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(192,57,43,.18),transparent 70%)}
+.hts{font-size:24px;margin-bottom:7px;animation:hb 2s ease-in-out infinite}
+@keyframes hb{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.dt{font-family:'Cinzel',serif;font-size:17px;background:linear-gradient(90deg,var(--g),#ff8c69,var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:sh 3s linear infinite;margin-bottom:6px}
+.dvar{font-family:'Amiri',serif;font-size:14px;color:rgba(201,168,76,.8);direction:rtl;margin-bottom:4px}
+.dvtr{font-size:10px;color:rgba(255,255,255,.4);font-style:italic}
+.counter{background:rgba(0,0,0,.45);border:1px solid rgba(201,168,76,.28);border-radius:12px;padding:14px;margin-bottom:14px;text-align:center}
+.cl{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,.5);margin-bottom:6px}
+.cm{font-family:'Cinzel',serif;font-size:34px;font-weight:700;color:var(--g);text-shadow:0 0 26px rgba(201,168,76,.5);letter-spacing:2px}
+.cc{font-size:14px;color:rgba(201,168,76,.5)}
+.csub{display:flex;justify-content:center;gap:20px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(201,168,76,.1)}
+.cs{text-align:center}
+.csn{font-size:16px;font-weight:800;color:var(--t2)}
+.csl{font-size:9px;color:rgba(255,255,255,.35)}
+.prog-w{margin-bottom:14px}
+.pl{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.35);margin-bottom:4px}
+.pb{height:6px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden}
+.pf{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--g),var(--red));transition:width 1.2s ease}
+.pp{text-align:center;font-size:10.5px;color:var(--g);font-weight:800;margin-top:3px}
+.btabs{display:flex;gap:6px;margin-bottom:11px}
+.btab{flex:1;padding:6px;border-radius:8px;border:1px solid rgba(255,255,255,.08);cursor:pointer;text-align:center;font-size:11px;font-weight:800;background:rgba(255,255,255,.03);color:rgba(255,255,255,.4);transition:all .25s}
+.btab.on{background:rgba(192,57,43,.18);border-color:rgba(192,57,43,.4);color:var(--red2)}
+.bc{display:none}.bc.on{display:block;animation:fu .3s ease}
+.bcard{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px;margin-bottom:7px}
+.bav{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.bav.o{background:rgba(192,57,43,.18);border:1px solid rgba(192,57,43,.25)}
+.bav.n{background:rgba(13,110,110,.18);border:1px solid rgba(13,110,110,.25)}
+.bi{flex:1}
+.bn{font-size:12px;font-weight:800;color:#fff;margin-bottom:1px}
+.bd{font-size:10px;color:rgba(255,255,255,.4);line-height:1.4}
+.bnd{font-size:10px;color:var(--g);font-weight:700}
+.amt-g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.ab{padding:8px 3px;border-radius:8px;border:1px solid rgba(201,168,76,.16);background:rgba(255,255,255,.03);cursor:pointer;text-align:center;transition:all .25s;color:rgba(255,255,255,.6);font-family:'Nunito',sans-serif}
+.ab.sel,.ab:hover{background:rgba(201,168,76,.13);border-color:var(--g);color:var(--g)}
+.ab .av{font-size:13.5px;font-weight:800;display:block}
+.ab .ac{font-size:9px;color:rgba(255,255,255,.32)}
+.ci{width:100%;padding:10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.16);color:#fff;font-size:13.5px;text-align:center;font-family:'Nunito',sans-serif;outline:none;transition:border-color .25s}
+.ci:focus{border-color:var(--g)}
+.ci::placeholder{color:rgba(255,255,255,.25)}
+.dcta{width:100%;padding:14px;border-radius:12px;border:none;cursor:pointer;background:linear-gradient(135deg,#7a0000,var(--red),var(--red2));color:#fff;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1.5px;box-shadow:0 5px 20px rgba(192,57,43,.5);transition:all .3s;margin-bottom:8px;position:relative;overflow:hidden}
+.dcta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.1),transparent);transform:translateX(-100%);transition:transform .6s}
+.dcta:hover::before{transform:translateX(100%)}
+.dcta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(192,57,43,.65)}
+.sn{text-align:center;font-size:9px;color:rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;gap:4px}
+.dfl{display:flex;margin-top:13px;flex-direction:column;gap:0}
+.di{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.dfl2{font-size:16px}
+.din{flex:1}
+.dnm{font-size:11px;font-weight:700;color:rgba(255,255,255,.6)}
+.dmg{font-size:9.5px;color:rgba(255,255,255,.35)}
+.dam{font-size:12px;font-weight:800;color:var(--g)}
+.dtm{font-size:9px;color:rgba(255,255,255,.2)}
+
+/* ── DATABASE ── */
+.db-tabs{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none}
+.db-tabs::-webkit-scrollbar{display:none}
+.dbt{flex-shrink:0;padding:5px 11px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.45);cursor:pointer;font-size:10.5px;font-weight:800;transition:all .25s}
+.dbt.on{background:rgba(18,165,165,.2);border-color:var(--t2);color:var(--t2)}
+.db-table{width:100%;border-collapse:collapse;font-size:10.5px;margin-bottom:14px}
+.db-table th{background:rgba(13,110,110,.2);color:var(--t2);padding:8px 10px;text-align:left;font-weight:800;border-bottom:1px solid rgba(18,165,165,.2)}
+.db-table td{padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.04);color:rgba(255,255,255,.7)}
+.db-table tr:hover td{background:rgba(255,255,255,.03)}
+.dbadge{display:inline-block;padding:2px 7px;border-radius:8px;font-size:9px;font-weight:800}
+.db-stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:13px}
+.db-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px;text-align:center}
+.db-stat-n{font-size:22px;font-weight:800;color:var(--g)}
+.db-stat-l{font-size:10px;color:rgba(255,255,255,.38)}
+.db-action{display:flex;gap:6px;margin-bottom:12px}
+.dba{padding:7px 13px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.65);cursor:pointer;font-size:11px;font-weight:700;font-family:'Nunito',sans-serif;transition:all .25s}
+.dba:hover{background:rgba(18,165,165,.15);border-color:var(--t2);color:var(--t2)}
+.dba.danger{border-color:rgba(192,57,43,.3);color:rgba(255,100,80,.7)}
+.dba.danger:hover{background:rgba(192,57,43,.15)}
+.db-form{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:11px;padding:13px;margin-bottom:12px;display:none}
+.db-form.on{display:block;animation:fu .3s ease}
+.db-form label{display:block;font-size:10.5px;color:rgba(255,255,255,.5);margin-bottom:3px;font-weight:700}
+.db-form input,.db-form select{width:100%;padding:8px 10px;border-radius:7px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.18);color:#fff;font-family:'Nunito',sans-serif;font-size:11.5px;margin-bottom:9px;outline:none}
+.db-form input:focus,.db-form select:focus{border-color:var(--g)}
+.db-save{width:100%;padding:9px;border-radius:8px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--t),var(--t2));color:#fff;font-family:'Cinzel',serif;font-size:11.5px;font-weight:700;transition:all .25s}
+
+/* ── MODAL ── */
+.modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:center;justify-content:center}
+.modal.on{display:flex;animation:fu .3s ease}
+.mbox{background:linear-gradient(160deg,var(--dk2),var(--dk));border:1px solid rgba(201,168,76,.28);border-radius:17px;padding:24px 20px;max-width:340px;width:86%;text-align:center}
+.mico{font-size:42px;margin-bottom:9px}
+.mttl{font-family:'Cinzel',serif;font-size:16px;color:var(--g);margin-bottom:8px}
+.mmsg{font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:16px}
+.mcl{padding:8px 26px;border-radius:8px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--t),var(--t2));color:#fff;font-family:'Cinzel',serif;font-weight:700;font-size:12px}
+
+/* ── TICKER ── */
+.ticker{position:fixed;bottom:56px;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:199;background:rgba(10,22,40,.97);border-top:1px solid rgba(192,57,43,.25);padding:6px 12px;display:flex;align-items:center;gap:8px;backdrop-filter:blur(10px)}
+.tdot{width:6px;height:6px;border-radius:50%;background:var(--red2);animation:blk 1.5s infinite;flex-shrink:0}
+@keyframes blk{0%,100%{opacity:1}50%{opacity:.15}}
+.ttxt{font-size:10px;color:rgba(255,255,255,.5);overflow:hidden;flex:1}
+.tsc{white-space:nowrap;animation:sc 24s linear infinite}
+@keyframes sc{0%{transform:translateX(100%)}100%{transform:translateX(-250%)}}
+.tlv{font-size:9px;color:var(--red2);font-weight:800;letter-spacing:1px;flex-shrink:0}
+
+[dir="rtl"] .h-arabic,[dir="rtl"] .dvar{text-align:right}
+[dir="rtl"] .reader-header{flex-direction:row-reverse}
+</style>
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
+  import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyByhb0VF5fSoXg6gBbsyxGGgo_8uDAtq9E",
+    authDomain: "nurhealth-app.firebaseapp.com",
+    projectId: "nurhealth-app",
+    storageBucket: "nurhealth-app.firebasestorage.app",
+    messagingSenderId: "650944579963",
+    appId: "1:650944579963:web:b96b4c28aea90e12ad95de"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.confirmerRdvFirebase = async function(nom, tel, medecin, montant, methode, ref) {
+    try {
+      await addDoc(collection(db, 'rendezVous'), {
+        patientNom: nom,
+        patientTel: tel,
+        medecinNom: medecin,
+        montant: parseInt(montant),
+        methode: methode,
+        referenceTransaction: ref,
+        statut: 'en_attente_confirmation',
+        paye: false,
+        source: 'PWA',
+        createdAt: serverTimestamp(),
+      });
+      return true;
+    } catch (e) {
+      console.error('Erreur Firebase:', e);
+      return false;
+    }
+  };
+</script>
+</head>
+<body>
+<div class="bgfx"></div><div class="stars"></div>
+<div class="app">
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lb on" onclick="SL('en')">🇬🇧 EN</button>
+  <button class="lb" onclick="SL('ha')">🇳🇪 HA</button>
+  <button class="lb" onclick="SL('fr')">🇫🇷 FR</button>
+  <button class="lb" onclick="SL('ar')">🇸🇦 ع</button>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-r"><div class="logo-i">☪️</div><h1>NurHealth</h1></div>
+  <div class="tag" id="XtagT">Light of Health & Faith · نور الصحة والإيمان</div>
+  <div class="dts">
+    <span>🕌 <span id="Xhijri">26 Ramadan 1446</span></span>
+    <span>🕒 <span id="Xclock">--:--</span></span>
+    <span id="Xloc">📍 Niger · Global</span>
+  </div>
+</header>
+
+<!-- PAGES -->
+
+<!-- 1. PRAYER -->
+<div class="pg on" id="pg-prayer">
+  <div class="stl">⏰ <span id="Xpt">Daily Prayer Times</span></div>
+  <div class="hijri-box">
+    <div class="h-ar">۲٦ رَمَضَان ۱٤٤٦</div>
+    <div class="h-mo" id="Xhm">Ramadan 1446 AH</div>
+    <div class="h-gr">Friday, April 3, 2026</div>
+  </div>
+  <div class="pg-grid" id="prayerGrid"></div>
+  <div class="card card-teal"><div class="h-text" id="Xphad" style="font-size:11.5px;line-height:1.6">Loading…</div></div>
+</div>
+
+<!-- 2. LIBRARY -->
+<div class="pg" id="pg-library">
+  <div id="lib-home">
+    <div class="stl">📚 <span id="Xlt">Islamic Library</span></div>
+    <input class="search-bar" id="libSearch" placeholder="Search books…" oninput="filterLib()"/>
+    <div class="book-grid">
+      <div class="book-card nawawi" onclick="openBook('nawawi')">
+        <div class="book-ico">📗</div>
+        <div class="book-ttl">40 Hadiths<br>An-Nawawi</div>
+        <div class="book-sub">Imam An-Nawawi</div>
+        <div class="book-badge">40</div>
+      </div>
+      <div class="book-card bulugh" onclick="openBook('bulugh')">
+        <div class="book-ico">📘</div>
+        <div class="book-ttl">Bulugh<br>al-Maram</div>
+        <div class="book-sub">Ibn Hajar Al-Asqalani</div>
+        <div class="book-badge">1358</div>
+      </div>
+      <div class="book-card riadus" onclick="openBook('riadus')">
+        <div class="book-ico">📙</div>
+        <div class="book-ttl">Riyad<br>as-Salihin</div>
+        <div class="book-sub">Imam An-Nawawi</div>
+        <div class="book-badge">1896</div>
+      </div>
+      <div class="book-card quran" onclick="openBook('quran40')">
+        <div class="book-ico">📖</div>
+        <div class="book-ttl">Daily Quran<br>Verses</div>
+        <div class="book-sub">Selected Surahs</div>
+        <div class="book-badge">✨</div>
+      </div>
+    </div>
+    <div class="stl" style="margin-top:4px">📊 <span id="Xls">Library Stats</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+      <div class="card" style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--g)">3</div><div style="font-size:9.5px;color:rgba(255,255,255,.4)" id="Xbk">Books</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--t2)">40</div><div style="font-size:9.5px;color:rgba(255,255,255,.4)">Hadiths</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--pur)">∞</div><div style="font-size:9.5px;color:rgba(255,255,255,.4)">Knowledge</div></div>
+    </div>
+  </div>
+  <div class="book-reader" id="bookReader">
+    <div class="reader-header">
+      <button class="back-btn" onclick="closeBook()">← <span id="Xback">Back</span></button>
+      <div class="reader-ttl" id="readerTitle">Book</div>
+    </div>
+    <input class="search-bar" id="hadithSearch" placeholder="Search hadith…" oninput="searchHadith()"/>
+    <div id="hadithList"></div>
+  </div>
+</div>
+
+<!-- 3. KIDS -->
+<div class="pg" id="pg-kids" style="background:linear-gradient(160deg,#0d0a2e,#1a0a3e,#0a1a2e)">
+  <div id="kids-home">
+    <div class="kids-hero">
+      <div class="kids-ico">🌟</div>
+      <div class="kids-ttl" id="Xkttl">Kids Science & Fun!</div>
+      <div class="kids-sub" id="Xksub">Explore the world Allah created 🌍</div>
+    </div>
+
+    <!-- QUIZ section -->
+    <div class="stl" style="color:#f39c12;border-color:rgba(243,156,18,.2)">🎯 <span id="XqT">Religious Quiz</span></div>
+    <div class="quiz-wrap">
+      <div id="quiz-cat-sel">
+        <div style="font-size:11.5px;color:rgba(255,255,255,.5);margin-bottom:9px;text-align:center" id="XqSel">Choose a category to start:</div>
+        <div class="quiz-cat">
+          <div class="qcat-btn" onclick="startQuiz('pillars')"><span class="qcat-ico">🕋</span><span id="Xq1">5 Pillars</span></div>
+          <div class="qcat-btn" onclick="startQuiz('prophets')"><span class="qcat-ico">👳</span><span id="Xq2">Prophets</span></div>
+          <div class="qcat-btn" onclick="startQuiz('quranQ')"><span class="qcat-ico">📖</span><span id="Xq3">Quran</span></div>
+          <div class="qcat-btn" onclick="startQuiz('sunnah')"><span class="qcat-ico">🌙</span><span id="Xq4">Sunnah</span></div>
+        </div>
+      </div>
+      <div class="quiz-game" id="quizGame">
+        <div class="qprog">
+          <span class="qnum" id="qNum">Q 1/5</span>
+          <div class="qprog-bar"><div class="qprog-fill" id="qProgFill" style="width:0%"></div></div>
+          <span class="qscore" id="qScoreDisp">⭐ 0</span>
+        </div>
+        <div class="question-box">
+          <div class="q-arabic-q" id="qArabic"></div>
+          <div class="q-txt" id="qTxt">Question</div>
+        </div>
+        <div class="opts" id="opts"></div>
+        <div class="explain-box" id="explainBox"></div>
+        <button class="next-q" id="nextQBtn" onclick="nextQ()">Next ➜</button>
+      </div>
+      <div class="quiz-result" id="quizResult">
+        <div class="result-ico" id="resIco">🏆</div>
+        <div class="result-ttl" id="resTtl">Quiz Complete!</div>
+        <div class="result-score" id="resScore">0/5</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.6);margin-bottom:14px" id="resMsg">Keep learning!</div>
+        <button class="restart-btn" onclick="resetQuiz()">🔄 <span id="Xrestart">Try Again</span></button>
+      </div>
+    </div>
+
+    <!-- SCIENCE section -->
+    <div class="stl" style="margin-top:14px;color:#3498db;border-color:rgba(52,152,219,.2)">🔬 <span id="XsciT">Science for Kids</span></div>
+    <div class="sci-grid">
+      <div class="sci-card sc-space" onclick="openSci('space')"><div class="sc-ico">🌌</div><div class="sc-ttl" id="Xsc1">Space & Stars</div><div class="sc-cnt">10 facts</div></div>
+      <div class="sci-card sc-body" onclick="openSci('body')"><div class="sc-ico">🫀</div><div class="sc-ttl" id="Xsc2">Human Body</div><div class="sc-cnt">10 facts</div></div>
+      <div class="sci-card sc-water" onclick="openSci('water')"><div class="sc-ico">💧</div><div class="sc-ttl" id="Xsc3">Water & Oceans</div><div class="sc-cnt">8 facts</div></div>
+      <div class="sci-card sc-animals" onclick="openSci('animals')"><div class="sc-ico">🦁</div><div class="sc-ttl" id="Xsc4">Animals</div><div class="sc-cnt">10 facts</div></div>
+      <div class="sci-card sc-plants" onclick="openSci('plants')"><div class="sc-ico">🌿</div><div class="sc-ttl" id="Xsc5">Plants</div><div class="sc-cnt">8 facts</div></div>
+      <div class="sci-card sc-weather" onclick="openSci('weather')"><div class="sc-ico">⛈️</div><div class="sc-ttl" id="Xsc6">Weather</div><div class="sc-cnt">8 facts</div></div>
+    </div>
+  </div>
+  <div class="sci-reader" id="sciReader">
+    <div class="reader-header">
+      <button class="back-btn" onclick="closeSci()">← <span id="Xback2">Back</span></button>
+      <div class="reader-ttl" id="sciTitle">Science</div>
+    </div>
+    <div id="sciContent"></div>
+  </div>
+</div>
+
+<!-- 4. DONATE -->
+<div class="pg" id="pg-donate" style="padding-bottom:80px">
+  <div class="don-hero">
+    <div class="hts">🤲❤️🕌</div>
+    <div class="dt" id="Xdt">Give for the Sake of Allah</div>
+    <div class="dvar">مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ</div>
+    <div class="dvtr" id="Xdvtr">Loading…</div>
+  </div>
+  <div class="counter">
+    <div class="cl" id="Xcl">🔴 LIVE TOTAL RAISED TODAY</div>
+    <div class="cm"><span class="cc">$</span><span id="totalR">0</span></div>
+    <div class="csub">
+      <div class="cs"><div class="csn" id="donorC">0</div><div class="csl" id="Xcd">Donors</div></div>
+      <div class="cs"><div class="csn" id="orphanC">0</div><div class="csl" id="Xco">Orphans</div></div>
+      <div class="cs"><div class="csn" id="familyC">0</div><div class="csl" id="Xcf">Families</div></div>
+    </div>
+  </div>
+  <div class="prog-w">
+    <div class="pl"><span id="Xpg">Monthly Goal</span><span id="progLbl">$0/$5000</span></div>
+    <div class="pb"><div class="pf" id="progF" style="width:0%"></div></div>
+    <div class="pp" id="progP">0%</div>
+  </div>
+  <div class="stl">👥 <span id="Xwho">Who You Help</span></div>
+  <div class="btabs">
+    <div class="btab on" id="Xtaborn" onclick="swBene('o',this)">🧒 <span id="Xtor">Orphans</span></div>
+    <div class="btab" id="Xtabnd" onclick="swBene('n',this)">🏚️ <span id="Xtnd">Needy</span></div>
+  </div>
+  <div class="bc on" id="bc-o">
+    <div class="bcard"><div class="bav o">🧒</div><div class="bi"><div class="bn" id="b1n">Orphanage of Zinder — Niger</div><div class="bd" id="b1d">47 children need food & education</div><div class="bnd">🎯 $12/month</div></div></div>
+    <div class="bcard"><div class="bav o">👦</div><div class="bi"><div class="bn" id="b2n">Al-Rahma Centre — Niger</div><div class="bd" id="b2d">Medical care for 30 orphans</div><div class="bnd">🎯 $20/month</div></div></div>
+    <div class="bcard"><div class="bav o">👧</div><div class="bi"><div class="bn" id="b3n">Sahel Orphan Project</div><div class="bd" id="b3d">Shelter & school — West Africa</div><div class="bnd">🎯 $15/month</div></div></div>
+  </div>
+  <div class="bc" id="bc-n">
+    <div class="bcard"><div class="bav n">🏚️</div><div class="bi"><div class="bn" id="b4n">Elderly Widows — Zinder</div><div class="bd" id="b4d">12 widows with no support</div><div class="bnd">🎯 $25/month</div></div></div>
+    <div class="bcard"><div class="bav n">👨‍👩‍👧</div><div class="bi"><div class="bn" id="b5n">Displaced Families — Sahel</div><div class="bd" id="b5d">Urgent food aid needed</div><div class="bnd">🎯 $50/month</div></div></div>
+    <div class="bcard"><div class="bav n">🍽️</div><div class="bi"><div class="bn" id="b6n">Iftar Programme — Global</div><div class="bd" id="b6d">$2 provides one Iftar meal</div><div class="bnd">🎯 $2/meal</div></div></div>
+  </div>
+  <div style="margin-top:13px">
+    <div class="cl" style="margin-bottom:8px" id="Xchoose">💰 CHOOSE AMOUNT (USD)</div>
+    <div class="amt-g">
+      <button class="ab" onclick="sA(5,this)"><span class="av">$5</span><span class="ac" id="Xa5">2 fed</span></button>
+      <button class="ab" onclick="sA(10,this)"><span class="av">$10</span><span class="ac" id="Xa10">1 month</span></button>
+      <button class="ab" onclick="sA(25,this)"><span class="av">$25</span><span class="ac" id="Xa25">Food pkg</span></button>
+      <button class="ab" onclick="sA(50,this)"><span class="av">$50</span><span class="ac" id="Xa50">School</span></button>
+      <button class="ab" onclick="sA(100,this)"><span class="av">$100</span><span class="ac" id="Xa100">Care</span></button>
+      <button class="ab" onclick="sA(0,this)"><span class="av" id="Xother">Other</span><span class="ac">Custom</span></button>
+    </div>
+    <input class="ci" id="custAmt" type="number" min="1" placeholder="Custom amount…" style="display:none"/>
+  </div>
+  <button class="dcta" onclick="donate()">❤️ <span id="Xcta">DONATE NOW — SADAQAH JARIYAH</span></button>
+  <div class="sn">🔒 <span id="Xsec">Secure · 100% to beneficiaries</span></div>
+  <div class="dfl" style="margin-top:13px">
+    <div class="stl" style="margin-bottom:8px">🌍 <span id="Xrd">Recent Donors</span></div>
+    <div id="donorList"></div>
+  </div>
+</div>
+<!-- 6. CONSULTATION TÉLÉMÉDECINE -->
+<div class="pg" id="pg-consult" style="padding-bottom:80px">
+
+  <!-- ONGLETS PRINCIPAUX -->
+  <div style="display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px">
+    <button class="ctab on" onclick="showConsultTab('medecins',this)">👨‍⚕️ Médecins</button>
+    <button class="ctab" onclick="showConsultTab('urgences',this)">🚨 Urgences</button>
+    <button class="ctab" onclick="showConsultTab('maladies',this)">🔬 Maladies</button>
+    <button class="ctab" onclick="showConsultTab('carte',this)">🗺️ Carte</button>
+    <button class="ctab" onclick="showConsultTab('ia',this)">🤖 IA Médicale</button>
+  </div>
+
+  <!-- ── TAB 1 : MÉDECINS ── -->
+  <div id="ctab-medecins" class="ctab-content on">
+    <div class="stl">🏥 Médecins Partenaires — Zinder</div>
+
+    <div class="med-card" id="med1">
+      <div class="med-top">
+        <div class="med-ava">👨‍⚕️</div>
+        <div class="med-info">
+          <div class="med-name">Dr. Issoufou Saley</div>
+          <div class="med-spec">Médecin Généraliste</div>
+          <div class="med-loc">📍 Hôpital National de Zinder</div>
+          <div class="med-stat dispo">🟢 Disponible — 3 000 FCFA</div>
+        </div>
+      </div>
+      <div class="med-tags">
+        <span class="mtag">Paludisme</span><span class="mtag">Hypertension</span>
+        <span class="mtag">Diabète</span><span class="mtag">Fièvre</span>
+      </div>
+      <div class="med-btns">
+        <button class="mbtn mbtn-rdv" onclick="ouvrirRdv('Dr. Issoufou Saley','Médecin Généraliste','3000','90909512')">📅 Réserver RDV</button>
+        <a href="tel:+22790909512" class="mbtn mbtn-call">📞 Appeler</a>
+        <a href="https://wa.me/22790909512?text=Bonjour Dr. Issoufou, je souhaite une consultation via NurHealth" class="mbtn mbtn-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="med-card" id="med2">
+      <div class="med-top">
+        <div class="med-ava">👩‍⚕️</div>
+        <div class="med-info">
+          <div class="med-name">Dr. Sahirou Aminatou</div>
+          <div class="med-spec">Gynécologue — Obstétricienne</div>
+          <div class="med-loc">📍 Clinique Al-Shifa, Zinder</div>
+          <div class="med-stat dispo">🟢 Disponible — 5 000 FCFA</div>
+        </div>
+      </div>
+      <div class="med-tags">
+        <span class="mtag">Grossesse</span><span class="mtag">Accouchement</span>
+        <span class="mtag">Santé féminine</span><span class="mtag">Pédiatrie</span>
+      </div>
+      <div class="med-btns">
+        <button class="mbtn mbtn-rdv" onclick="ouvrirRdv('Dr. Sahirou Aminatou','Gynécologue','5000','96307928')">📅 Réserver RDV</button>
+        <a href="tel:+22796307928" class="mbtn mbtn-call">📞 Appeler</a>
+        <a href="https://wa.me/22796307928?text=Bonjour Dr. Sahirou, je souhaite une consultation via NurHealth" class="mbtn mbtn-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="med-card" id="med3">
+      <div class="med-top">
+        <div class="med-ava">👨‍⚕️</div>
+        <div class="med-info">
+          <div class="med-name">Dr. Moussa Mahamadou</div>
+          <div class="med-spec">Pédiatre</div>
+          <div class="med-loc">📍 Centre de Santé Intégré — Zinder</div>
+          <div class="med-stat indispo">🔴 Occupé — Disponible à 15h</div>
+        </div>
+      </div>
+      <div class="med-tags">
+        <span class="mtag">Enfants</span><span class="mtag">Nutrition</span>
+        <span class="mtag">Vaccins</span><span class="mtag">Diarrhée</span>
+      </div>
+      <div class="med-btns">
+        <button class="mbtn mbtn-rdv" onclick="ouvrirRdv('Dr. Moussa Mahamadou','Pédiatre','4000','97112233')">📅 Réserver RDV</button>
+        <a href="tel:+22797112233" class="mbtn mbtn-call">📞 Appeler</a>
+        <a href="https://wa.me/22797112233?text=Bonjour Dr. Moussa, je souhaite une consultation via NurHealth" class="mbtn mbtn-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- FORMULAIRE RDV -->
+    <div id="rdvForm" style="display:none;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.3);border-radius:14px;padding:16px;margin-top:12px">
+      <div style="font-family:'Cinzel',serif;font-size:13px;color:#D4AF37;font-weight:700;margin-bottom:12px">📅 Réserver avec <span id="rdvMedecin"></span></div>
+      <input id="rdvNom" placeholder="Votre nom complet" class="rinput"/>
+      <input id="rdvTel" placeholder="Votre téléphone (ex: 90xxxxxx)" class="rinput"/>
+      <input id="rdvDate" type="date" class="rinput"/>
+      <textarea id="rdvSymp" placeholder="Décrivez vos symptômes brièvement..." class="rinput" rows="3" style="resize:none"></textarea>
+      <select id="rdvMethode" class="rinput">
+        <option value="">💳 Mode de paiement</option>
+        <option>Orange Money — 90909512</option>
+        <option>Moov Money — 74606023</option>
+        <option>Airtel Money — 96307928</option>
+        <option>Amanata — 93909512</option>
+        <option>My Nita — 96307928</option>
+        <option>Espèces (sur place)</option>
+      </select>
+      <input id="rdvRef" placeholder="Référence transaction (après paiement)" class="rinput"/>
+      <button onclick="confirmerRdv()" style="width:100%;padding:11px;background:linear-gradient(135deg,#D4AF37,#c49b2a);border:none;border-radius:9px;color:#1B4332;font-weight:800;cursor:pointer;font-size:13px;margin-top:4px">✅ Confirmer le RDV</button>
+      <button onclick="document.getElementById('rdvForm').style.display='none'" style="width:100%;padding:8px;background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:9px;color:rgba(255,255,255,.4);cursor:pointer;margin-top:6px;font-size:12px">Annuler</button>
+    </div>
+  </div>
+
+  <!-- ── TAB 2 : URGENCES ── -->
+  <div id="ctab-urgences" class="ctab-content">
+    <div class="stl" style="color:#e74c3c;border-color:rgba(231,76,60,.2)">🚨 Numéros d'Urgence — Niger</div>
+    <div class="urg-card">
+      <div class="urg-ico">🚑</div>
+      <div class="urg-info">
+        <div class="urg-name">SAMU — Urgences Médicales</div>
+        <div class="urg-num">15</div>
+      </div>
+      <a href="tel:15" class="urg-btn">Appeler</a>
+    </div>
+    <div class="urg-card">
+      <div class="urg-ico">🚒</div>
+      <div class="urg-info">
+        <div class="urg-name">Pompiers — Secours</div>
+        <div class="urg-num">18</div>
+      </div>
+      <a href="tel:18" class="urg-btn">Appeler</a>
+    </div>
+    <div class="urg-card">
+      <div class="urg-ico">👮</div>
+      <div class="urg-info">
+        <div class="urg-name">Police Nationale</div>
+        <div class="urg-num">17</div>
+      </div>
+      <a href="tel:17" class="urg-btn">Appeler</a>
+    </div>
+    <div class="urg-card">
+      <div class="urg-ico">🏥</div>
+      <div class="urg-info">
+        <div class="urg-name">Hôpital National de Zinder</div>
+        <div class="urg-num">+227 20 51 00 33</div>
+      </div>
+      <a href="tel:+22720510033" class="urg-btn">Appeler</a>
+    </div>
+    <div class="urg-card">
+      <div class="urg-ico">🤱</div>
+      <div class="urg-info">
+        <div class="urg-name">Maternité — Urgences Obstétriques</div>
+        <div class="urg-num">+227 96 30 79 28</div>
+      </div>
+      <a href="tel:+22796307928" class="urg-btn">Appeler</a>
+    </div>
+    <div class="card" style="margin-top:12px;background:rgba(231,76,60,.06);border-color:rgba(231,76,60,.2)">
+      <div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.8;text-align:center">
+        ⚠️ <strong style="color:#e74c3c">En cas d'urgence vitale</strong><br>
+        Appelez le <strong style="color:#fff">15</strong> immédiatement<br>
+        ou rendez-vous aux urgences de<br>
+        <strong style="color:#D4AF37">l'Hôpital National de Zinder</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TAB 3 : BASE DE DONNÉES MÉDICALE ── -->
+  <div id="ctab-maladies" class="ctab-content">
+    <div class="stl">🔬 Maladies Fréquentes — Niger</div>
+    <input id="maladieSearch" placeholder="🔍 Rechercher une maladie ou symptôme..." class="rinput" oninput="filtrerMaladies()"/>
+    <div id="maladieList"></div>
+    <div id="maladieDetail" style="display:none"></div>
+  </div>
+
+  <!-- ── TAB 4 : CARTE ── -->
+  <div id="ctab-carte" class="ctab-content">
+    <div class="stl">🗺️ Centres de Santé — Zinder</div>
+    <div id="mapContainer" style="border-radius:12px;overflow:hidden;border:1px solid rgba(201,168,76,.2);margin-bottom:12px">
+      <iframe
+        id="zinderMap"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=8.9%2C13.76%2C9.07%2C13.85&layer=mapnik&marker=13.8069,8.9881"
+        style="width:100%;height:280px;border:none"
+        loading="lazy">
+      </iframe>
+    </div>
+    <div class="stl" style="font-size:11px">📍 Centres de Santé</div>
+    <div id="centresList"></div>
+  </div>
+
+  <!-- ── TAB 5 : IA MÉDICALE ── -->
+  <div id="ctab-ia" class="ctab-content">
+    <div class="stl">🤖 Assistant Médical IA</div>
+    <div style="background:rgba(13,110,110,.1);border:1px solid rgba(18,165,165,.2);border-radius:12px;padding:12px;margin-bottom:12px;font-size:11px;color:rgba(255,255,255,.6);line-height:1.7;text-align:center">
+      ⚠️ <strong style="color:#12a5a5">Avertissement médical</strong><br>
+      Cet assistant IA donne des informations générales.<br>
+      Il ne remplace <strong style="color:#fff">jamais</strong> un médecin.<br>
+      En cas de doute, consultez un professionnel.
+    </div>
+    <div id="iaChatBox" style="background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:12px;min-height:200px;max-height:350px;overflow-y:auto;margin-bottom:10px">
+      <div class="ia-msg ia-bot">
+        <div class="ia-ava">🤖</div>
+        <div class="ia-txt">Assalamu Alaikum ! Je suis l'assistant médical NurHealth. Décrivez vos symptômes et je vous aiderai à comprendre votre état de santé. <strong style="color:#D4AF37">Rappel : consultez toujours un médecin pour un diagnostic précis.</strong></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <input id="iaInput" placeholder="Décrivez vos symptômes..." class="rinput" style="margin-bottom:0;flex:1" onkeydown="if(event.key==='Enter')envoyerIA()"/>
+      <button onclick="envoyerIA()" style="padding:10px 14px;background:linear-gradient(135deg,#0d6e6e,#12a5a5);border:none;border-radius:9px;color:#fff;font-weight:800;cursor:pointer;font-size:16px;white-space:nowrap">➤</button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+      <button class="ia-quick" onclick="quickIA('J\'ai de la fièvre depuis 3 jours')">🌡️ Fièvre</button>
+      <button class="ia-quick" onclick="quickIA('J\'ai des maux de tête sévères')">🤕 Maux de tête</button>
+      <button class="ia-quick" onclick="quickIA('J\'ai des douleurs abdominales')">🤢 Douleurs ventre</button>
+      <button class="ia-quick" onclick="quickIA('Mon enfant a de la diarrhée')">👶 Enfant malade</button>
+      <button class="ia-quick" onclick="quickIA('Je suis enceinte et j\'ai des douleurs')">🤱 Grossesse</button>
+      <button class="ia-quick" onclick="quickIA('J\'ai de la toux depuis longtemps')">😷 Toux</button>
+    </div>
+  </div>
+
+</div><!-- fin pg-consult -->
+
+<!-- 5. DATABASE -->
+<div class="pg" id="pg-db">
+  <div class="stl">🗄️ <span id="Xdbt">Database</span></div>
+  <div class="db-stat-grid">
+    <div class="db-stat"><div class="db-stat-n" id="dbDonors">127</div><div class="db-stat-l" id="XdbD">Total Donors</div></div>
+    <div class="db-stat"><div class="db-stat-n" id="dbAmount">$2,847</div><div class="db-stat-l" id="XdbA">Total Raised</div></div>
+    <div class="db-stat"><div class="db-stat-n" id="dbOrph">43</div><div class="db-stat-l" id="XdbO">Orphans</div></div>
+    <div class="db-stat"><div class="db-stat-n" id="dbFam">18</div><div class="db-stat-l" id="XdbF">Families</div></div>
+  </div>
+  <div class="db-tabs">
+    <div class="dbt on" onclick="dbTab('donors',this)" id="XdtDon">Donors</div>
+    <div class="dbt" onclick="dbTab('orphans',this)" id="XdtOrph">Orphans</div>
+    <div class="dbt" onclick="dbTab('families',this)" id="XdtFam">Families</div>
+    <div class="dbt" onclick="dbTab('users',this)" id="XdtUsr">App Users</div>
+  </div>
+  <div class="db-action">
+    <button class="dba" onclick="toggleDbForm()">➕ <span id="XdbAdd">Add Record</span></button>
+    <button class="dba" onclick="exportDb()">📥 <span id="XdbExp">Export</span></button>
+    <button class="dba danger" onclick="clearDbRow()">🗑️ <span id="XdbDel">Delete</span></button>
+  </div>
+  <div class="db-form" id="dbForm">
+    <label id="XfName">Full Name</label><input id="fName" placeholder="e.g. Ahmad Ibrahim"/>
+    <label id="XfAmt">Amount ($)</label><input id="fAmt" type="number" placeholder="50"/>
+    <label id="XfCnt">Country</label><input id="fCnt" placeholder="Niger"/>
+    <label id="XfSts">Status</label>
+    <select id="fSts"><option value="active">Active</option><option value="pending">Pending</option><option value="completed">Completed</option></select>
+    <button class="db-save" onclick="saveRecord()">💾 <span id="XdbSave">Save Record</span></button>
+  </div>
+  <div id="dbTableWrap">
+    <table class="db-table" id="dbTable"></table>
+  </div>
+</div>
+
+</div><!-- .app -->
+
+<!-- BOTTOM NAV -->
+<nav class="bnav">
+  <button class="bn on" id="bn-prayer" onclick="GO('prayer',this)"><span class="ico">🕋</span><span class="lbl" id="Nnp">Prayer</span></button>
+  <button class="bn" id="bn-library" onclick="GO('library',this)"><span class="ico">📚</span><span class="lbl" id="Nnl">Library</span></button>
+  <button class="bn" id="bn-kids" onclick="GO('kids',this)"><span class="ico">🌟</span><span class="lbl" id="Nnk">Kids</span></button>
+  <button class="bn don-bn" id="bn-donate" onclick="GO('donate',this)"><span class="ico">❤️</span><span class="lbl" id="Nnd">Donate</span></button>
+  <button class="bn" id="bn-consult" onclick="GO('consult',this)"><span class="ico">🏥</span><span class="lbl">Consult</span></button>
+  <button class="bn" id="bn-db" onclick="GO('db',this)"><span class="ico">🗄️</span><span class="lbl" id="Nndb">Database</span></button>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="tdot"></div>
+  <div class="tlv">LIVE</div>
+  <div class="ttxt"><div class="tsc" id="tickerTxt">Loading…</div></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="mbox">
+    <div class="mico" id="mico">🤲</div>
+    <div class="mttl" id="mttl">JazakAllahu Khairan!</div>
+    <div class="mmsg" id="mmsg">Your donation has been received.</div>
+    <button class="mcl" onclick="closeModal()">Close · آمين</button>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   TRANSLATIONS
+════════════════════════════════════════════ */
+const L={
+en:{
+  tag:"Light of Health & Faith · نور الصحة والإيمان",loc:"📍 Niger · Global",hm:"Ramadan 1446 AH",
+  pt:"Daily Prayer Times",lt:"Islamic Library",ls:"Library Stats",bk:"Books",back:"Back",
+  kttl:"Kids Science & Fun!",ksub:"Explore the world Allah created 🌍",
+  qT:"Religious Quiz",qSel:"Choose a category:",q1:"5 Pillars",q2:"Prophets",q3:"Quran",q4:"Sunnah",restart:"Try Again",
+  sciT:"Science for Kids",sc1:"Space & Stars",sc2:"Human Body",sc3:"Water & Oceans",sc4:"Animals",sc5:"Plants",sc6:"Weather",
+  dt:"Give for the Sake of Allah",dvtr:'"…like a seed growing seven spikes…" — Al-Baqarah 2:261',
+  cl:"🔴 LIVE TOTAL RAISED TODAY",cd:"Donors",co:"Orphans",cf:"Families",pg:"Monthly Goal",
+  who:"Who You Help",tor:"Orphans",tnd:"Needy",
+  b1n:"Orphanage of Zinder — Niger",b1d:"47 children need food & education",
+  b2n:"Al-Rahma Centre — Niger",b2d:"Medical care for 30 orphans",
+  b3n:"Sahel Orphan Project",b3d:"Shelter & school — West Africa",
+  b4n:"Elderly Widows — Zinder",b4d:"12 widows with no support",
+  b5n:"Displaced Families — Sahel",b5d:"Urgent food aid needed",
+  b6n:"Iftar Programme — Global",b6d:"$2 provides one Iftar meal",
+  a5:"2 fed",a10:"1 month",a25:"Food pkg",a50:"School",a100:"Care",other:"Other",
+  choose:"💰 CHOOSE AMOUNT (USD)",cta:"DONATE NOW — SADAQAH JARIYAH",sec:"Secure · 100% to beneficiaries",rd:"Recent Donors",
+  dbt:"Database",dbD:"Total Donors",dbA:"Total Raised",dbO:"Orphans",dbF:"Families",
+  dtDon:"Donors",dtOrph:"Orphans",dtFam:"Families",dtUsr:"App Users",
+  dbAdd:"Add Record",dbExp:"Export",dbDel:"Delete",dbSave:"Save Record",
+  fName:"Full Name",fAmt:"Amount ($)",fCnt:"Country",fSts:"Status",
+  nav:["Prayer","Library","Kids","Donate","Database"],
+  phad:'🌙 "The five daily prayers are an expiation for what comes between them, as long as major sins are avoided." — Sahih Muslim',
+  pnames:["Fajr","Sunrise","Dhuhr","Asr","Maghrib","Isha"],pnxt:"NEXT",
+  don_msgs:["For the orphans","Sadaqah Jariyah","May Allah accept","For the needy","Barakallahu feekum"],
+  mok:"JazakAllahu Khairan!",mmsg:"Your donation of $AMT has been recorded. May Allah accept it. Ameen.",
+  merr:"Select Amount",merrmsg:"Please choose or enter a donation amount.",
+},
+ha:{
+  tag:"Haske na Lafiya & Imani · نور الصحة والإيمان",loc:"📍 Nijar · Duniya",hm:"Ramadan 1446 AH",
+  pt:"Lokutan Sallah",lt:"Laburaren Islama",ls:"Kididdigan Littafi",bk:"Littattafai",back:"Koma",
+  kttl:"Kimiyya & Nishaɗi!",ksub:"Bincika duniyar da Allah ya halitta 🌍",
+  qT:"Tambayoyin Addini",qSel:"Zaɓi rukunin tambayoyin:",q1:"Ginshiƙai 5",q2:"Annabawa",q3:"Alƙur'ani",q4:"Sunnah",restart:"Sake Gwadawa",
+  sciT:"Kimiyya ga Yara",sc1:"Sararin Samaniya",sc2:"Jikin Mutum",sc3:"Ruwa & Teku",sc4:"Dabbobi",sc5:"Tsirrai",sc6:"Yanayi",
+  dt:"Ba da Sadaka Domin Allah",dvtr:"…kamar iri da ya girmo tsauri bakwai… — Al-Baqarah 2:261",
+  cl:"🔴 JIMILAR DA AKA TARA YAU",cd:"Masu Bada",co:"Maraƙa",cf:"Iyalai",pg:"Manufar Wata",
+  who:"Waɗanda Kuke Taimakawa",tor:"Maraƙa",tnd:"Mabukata",
+  b1n:"Maraƙan Zinder — Nijar",b1d:"Yara 47 suna buƙatar abinci da ilimi",
+  b2n:"Cibiyar Al-Rahma",b2d:"Kiwon lafiya ga maraƙa 30",
+  b3n:"Aikin Maraƙan Sahel",b3d:"Matsuguni & makaranta",
+  b4n:"Gwauruwan Tsofaffi",b4d:"Mata gwauruwa 12 ba tare da goyon baya",
+  b5n:"Iyalai masu Tserewa",b5d:"Taimako na abinci",
+  b6n:"Shirye-shiryen Iftar",b6d:"Dala 2 = Iftar ɗaya",
+  a5:"An ciyar",a10:"Wata 1",a25:"Kayan abinci",a50:"Makaranta",a100:"Kula",other:"Wani",
+  choose:"💰 ZAƁI ADADIN (USD)",cta:"BA DA SADAKA YANZU",sec:"Amintacce · %100 ya kai",rd:"Masu Sadaka",
+  dbt:"Bayanan Kula",dbD:"Masu Bada",dbA:"Jimila",dbO:"Maraƙa",dbF:"Iyalai",
+  dtDon:"Masu Bada",dtOrph:"Maraƙa",dtFam:"Iyalai",dtUsr:"Masu App",
+  dbAdd:"Ƙara Rikodin",dbExp:"Fitar",dbDel:"Share",dbSave:"Adana",
+  fName:"Cikakken Suna",fAmt:"Adadin ($)",fCnt:"Ƙasa",fSts:"Yanayi",
+  nav:["Sallah","Laburare","Yara","Sadaka","Bayanan"],
+  phad:'🌙 "Sallah biyar na yini sun tuba duk abin da ke tsakaninsu." — Sahih Muslim',
+  pnames:["Asuba","Fitowar Rana","Azahar","La\'asar","Magariba","Isha\'i"],pnxt:"NA GAB",
+  don_msgs:["Domin maraƙa","Sadaqah Jariyah","Allah Ya karba","Domin mabukata","Barakallahu"],
+  mok:"JazakAllahu Khairan!",mmsg:"An karbi sadakarka ta $AMT. Allah ﷻ Ya karbe ta. Ameen.",
+  merr:"Zaɓi Adadi",merrmsg:"Da fatan zaɓi adadin sadaka.",
+},
+fr:{
+  tag:"Lumière de Santé & Foi · نور الصحة والإيمان",loc:"📍 Niger · Mondial",hm:"Ramadan 1446 H",
+  pt:"Horaires des Prières",lt:"Bibliothèque Islamique",ls:"Statistiques",bk:"Livres",back:"Retour",
+  kttl:"Sciences & Jeux pour Enfants!",ksub:"Explore le monde qu'Allah a créé 🌍",
+  qT:"Quiz Religieux",qSel:"Choisissez une catégorie :",q1:"5 Piliers",q2:"Prophètes",q3:"Coran",q4:"Sunnah",restart:"Recommencer",
+  sciT:"Sciences pour Enfants",sc1:"Espace & Étoiles",sc2:"Corps Humain",sc3:"Eau & Océans",sc4:"Animaux",sc5:"Plantes",sc6:"Météo",
+  dt:"Donnez pour l'Amour d'Allah",dvtr:"…comme une graine donnant sept épis… — Al-Baqarah 2:261",
+  cl:"🔴 TOTAL COLLECTÉ AUJOURD'HUI",cd:"Donateurs",co:"Orphelins",cf:"Familles",pg:"Objectif Mensuel",
+  who:"Qui Vous Aidez",tor:"Orphelins",tnd:"Nécessiteux",
+  b1n:"Orphelinat de Zinder — Niger",b1d:"47 enfants ont besoin de nourriture",
+  b2n:"Centre Al-Rahma — Niger",b2d:"Soins médicaux pour 30 orphelins",
+  b3n:"Projet Orphelins Sahel",b3d:"Hébergement et école",
+  b4n:"Veuves Âgées — Zinder",b4d:"12 veuves sans soutien",
+  b5n:"Familles Déplacées — Sahel",b5d:"Aide alimentaire urgente",
+  b6n:"Programme Iftar — Mondial",b6d:"2$ = un repas Iftar",
+  a5:"2 nourris",a10:"1 mois",a25:"Panier",a50:"École",a100:"Soins",other:"Autre",
+  choose:"💰 CHOISISSEZ LE MONTANT (USD)",cta:"FAIRE UN DON — SADAQAH JARIYAH",sec:"Sécurisé · 100% aux bénéficiaires",rd:"Donateurs Récents",
+  dbt:"Base de Données",dbD:"Total Donateurs",dbA:"Total Collecté",dbO:"Orphelins",dbF:"Familles",
+  dtDon:"Donateurs",dtOrph:"Orphelins",dtFam:"Familles",dtUsr:"Utilisateurs",
+  dbAdd:"Ajouter",dbExp:"Exporter",dbDel:"Supprimer",dbSave:"Enregistrer",
+  fName:"Nom Complet",fAmt:"Montant ($)",fCnt:"Pays",fSts:"Statut",
+  nav:["Prière","Bibliothèque","Enfants","Don","Base de données"],
+  phad:'🌙 "Les cinq prières sont une expiation de ce qui se passe entre elles." — Sahih Muslim',
+  pnames:["Fajr","Lever","Dhuhr","Asr","Maghrib","Isha"],pnxt:"PROCHAINE",
+  don_msgs:["Pour les orphelins","Sadaqah Jariyah","Qu'Allah accepte","Pour les nécessiteux","Barakallahu"],
+  mok:"JazakAllahu Khairan !",mmsg:"Votre don de $AMT a été enregistré. Ameen.",
+  merr:"Choisir un Montant",merrmsg:"Veuillez sélectionner un montant.",
+},
+ar:{
+  tag:"نور الصحة والإيمان · Light of Health & Faith",loc:"📍 النيجر · عالمياً",hm:"رمضان ١٤٤٦ هـ",
+  pt:"مواقيت الصلاة",lt:"المكتبة الإسلامية",ls:"إحصائيات",bk:"الكتب",back:"رجوع",
+  kttl:"العلوم والترفيه للأطفال!",ksub:"استكشف عالم الله 🌍",
+  qT:"اختبار ديني",qSel:"اختر فئة السؤال:",q1:"أركان الإسلام",q2:"الأنبياء",q3:"القرآن",q4:"السنة",restart:"إعادة المحاولة",
+  sciT:"العلوم للأطفال",sc1:"الفضاء والنجوم",sc2:"جسم الإنسان",sc3:"الماء والمحيطات",sc4:"الحيوانات",sc5:"النباتات",sc6:"الطقس",
+  dt:"تبرع في سبيل الله",dvtr:"…كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ… — البقرة ٢٦١",
+  cl:"🔴 إجمالي التبرعات اليوم",cd:"المتبرعون",co:"الأيتام",cf:"العائلات",pg:"هدف الشهر",
+  who:"من تساعدون",tor:"الأيتام",tnd:"المحتاجون",
+  b1n:"دار أيتام زندر — النيجر",b1d:"٤٧ طفلاً يحتاجون غذاءً وتعليماً",
+  b2n:"مركز الرحمة — النيجر",b2d:"رعاية صحية لـ٣٠ يتيماً",
+  b3n:"مشروع أيتام الساحل",b3d:"إيواء وتعليم",
+  b4n:"الأرامل المسنات — زندر",b4d:"١٢ أرملة بلا سند",
+  b5n:"العائلات النازحة — الساحل",b5d:"مساعدة غذائية عاجلة",
+  b6n:"برنامج الإفطار — عالمي",b6d:"دولاران = وجبة إفطار",
+  a5:"إطعام ٢",a10:"شهر",a25:"سلة",a50:"مدرسة",a100:"رعاية",other:"آخر",
+  choose:"💰 اختر المبلغ (دولار)",cta:"تبرع الآن — صدقة جارية",sec:"آمن · ١٠٠٪ للمستفيدين",rd:"آخر المتبرعين",
+  dbt:"قاعدة البيانات",dbD:"إجمالي المتبرعين",dbA:"المبلغ المجموع",dbO:"الأيتام",dbF:"العائلات",
+  dtDon:"المتبرعون",dtOrph:"الأيتام",dtFam:"العائلات",dtUsr:"المستخدمون",
+  dbAdd:"إضافة سجل",dbExp:"تصدير",dbDel:"حذف",dbSave:"حفظ",
+  fName:"الاسم الكامل",fAmt:"المبلغ ($)",fCnt:"الدولة",fSts:"الحالة",
+  nav:["الصلاة","المكتبة","الأطفال","تبرع","قاعدة البيانات"],
+  phad:'🌙 "الصلوات الخمس كفارة لما بينهن ما اجتُنبت الكبائر" — صحيح مسلم',
+  pnames:["الفجر","الشروق","الظهر","العصر","المغرب","العشاء"],pnxt:"التالية",
+  don_msgs:["للأيتام","صدقة جارية","تقبّل الله","للمحتاجين","بارك الله"],
+  mok:"جزاك الله خيراً!",mmsg:"تم تسجيل تبرعك $AMT. تقبّل الله. آمين.",
+  merr:"اختر مبلغاً",merrmsg:"الرجاء اختيار مبلغ التبرع.",
+}};
+
+/* ════════════════════════════════════════════
+   BOOKS DATA
+════════════════════════════════════════════ */
+const BOOKS={
+nawawi:{title:"40 Hadiths — Imam An-Nawawi",items:[
+  {num:"Hadith 1",ar:"إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ",en:"Actions are judged by intentions, and every person will have what they intended.",src:"Bukhari & Muslim"},
+  {num:"Hadith 2",ar:"الإِسْلامُ أَنْ تَشْهَدَ أَنْ لَا إِلَهَ إِلَّا اللهُ",en:"Islam is to bear witness that none has the right to be worshipped but Allah, and that Muhammad is the Messenger of Allah; to establish the prayer; to pay the Zakah; to fast in Ramadan; and to perform Hajj.",src:"Bukhari & Muslim"},
+  {num:"Hadith 3",ar:"بُنِيَ الإِسْلامُ عَلَى خَمْسٍ",en:"Islam was built upon five pillars: testifying there is no god but Allah and Muhammad is His messenger, establishing prayer, paying zakat, fasting Ramadan, and pilgrimage to the House.",src:"Bukhari & Muslim"},
+  {num:"Hadith 4",ar:"إِنَّ أَحَدَكُمْ يُجْمَعُ خَلْقُهُ فِي بَطْنِ أُمِّهِ أَرْبَعِينَ يَوْماً",en:"Each of you is constituted in your mother's womb for forty days as a sperm drop, then it becomes a clinging clot for a similar period, then a chewed lump for a similar period…",src:"Bukhari & Muslim"},
+  {num:"Hadith 5",ar:"مَنْ أَحْدَثَ فِي أَمْرِنَا هَذَا مَا لَيْسَ مِنْهُ فَهُوَ رَدٌّ",en:"Whoever introduces into this affair of ours something that is not part of it will have it rejected.",src:"Bukhari & Muslim"},
+  {num:"Hadith 6",ar:"إِنَّ الْحَلَالَ بَيِّنٌ وَإِنَّ الْحَرَامَ بَيِّنٌ",en:"The halal is clear and the haram is clear, and between them are ambiguous matters. Whoever avoids the ambiguous has absolved themselves of blame for his religion and honor.",src:"Bukhari & Muslim"},
+  {num:"Hadith 7",ar:"الدِّينُ النَّصِيحَةُ",en:"The religion is sincere counsel. The companions asked: For whom? He replied: For Allah, His Book, His Messenger, the leaders of the Muslims, and their common folk.",src:"Muslim"},
+  {num:"Hadith 8",ar:"أُمِرْتُ أَنْ أُقَاتِلَ النَّاسَ",en:"I have been commanded to fight the people until they testify that there is no god but Allah and that Muhammad is the Messenger of Allah.",src:"Bukhari & Muslim"},
+  {num:"Hadith 9",ar:"مَا نَهَيْتُكُمْ عَنْهُ فَاجْتَنِبُوهُ",en:"What I have forbidden for you, avoid; and what I have commanded you, do as much of it as you can.",src:"Bukhari & Muslim"},
+  {num:"Hadith 10",ar:"إِنَّ اللهَ طَيِّبٌ لَا يَقْبَلُ إِلَّا طَيِّباً",en:"Allah is pure and He accepts only that which is pure. Allah has commanded the believers with the same command as the Messengers.",src:"Muslim"},
+  {num:"Hadith 11",ar:"دَعْ مَا يَرِيبُكَ إِلَى مَا لَا يَرِيبُكَ",en:"Leave that which makes you doubt for that which does not make you doubt.",src:"Tirmidhi & Nasai"},
+  {num:"Hadith 12",ar:"مِنْ حُسْنِ إِسْلامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ",en:"Part of the perfection of one's Islam is leaving that which does not concern him.",src:"Tirmidhi"},
+  {num:"Hadith 13",ar:"لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",en:"None of you truly believes until he loves for his brother what he loves for himself.",src:"Bukhari & Muslim"},
+  {num:"Hadith 14",ar:"لَا يَحِلُّ دَمُ امْرِئٍ مُسْلِمٍ",en:"The blood of a Muslim man is not lawful to shed unless he is one of three cases: the married person who commits adultery, a life for a life, and the one who abandons his religion.",src:"Bukhari & Muslim"},
+  {num:"Hadith 15",ar:"مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الآخِرِ",en:"Whoever believes in Allah and the Last Day should say something good or keep silent; whoever believes in Allah and the Last Day should honor his neighbor; whoever believes in Allah and the Last Day should honor his guest.",src:"Bukhari & Muslim"},
+]},
+bulugh:{title:"Bulugh al-Maram — Ibn Hajar",items:[
+  {num:"Hadith 1",ar:"إِنَّمَا الْمَاءُ مِنَ الْمَاءِ",en:"Water is only from water (i.e., ghusl is required only if there is ejaculation).",src:"Muslim"},
+  {num:"Hadith 2",ar:"الطَّهُورُ شَطْرُ الإِيمَانِ",en:"Purity is half of faith.",src:"Muslim"},
+  {num:"Hadith 3",ar:"لَا يَقْبَلُ اللهُ صَلَاةً بِغَيْرِ طَهُورٍ",en:"Allah does not accept a prayer without purification.",src:"Muslim"},
+  {num:"Hadith 4",ar:"إِذَا اسْتَيْقَظَ أَحَدُكُمْ مِنْ نَوْمِهِ",en:"When one of you wakes from sleep, he should not dip his hand in the vessel until he has washed it three times.",src:"Bukhari & Muslim"},
+  {num:"Hadith 5",ar:"إِذَا تَوَضَّأْتَ فَانْتَثِرْ",en:"When you perform ablution, blow out from your nose.",src:"Abu Dawud"},
+  {num:"Hadith 6",ar:"لَا يُمَسَّ الْقُرْآنُ إِلَّا طَاهِرٌ",en:"None shall touch the Quran except one who is pure.",src:"Malik — Al-Muwatta"},
+  {num:"Hadith 7",ar:"الأَرْضُ كُلُّهَا مَسْجِدٌ إِلَّا الْمَقْبَرَةَ وَالْحَمَّامَ",en:"The whole earth has been made a mosque for me, except for graveyards and bathrooms.",src:"Tirmidhi"},
+  {num:"Hadith 8",ar:"إِذَا أَتَى أَحَدُكُمُ الْخَلَاءَ",en:"When one of you goes to the restroom, let him not face or turn his back toward the qiblah.",src:"Bukhari & Muslim"},
+  {num:"Hadith 9",ar:"الصَّلَاةُ الْخَمْسُ كَفَّارَةٌ لِمَا بَيْنَهُنَّ",en:"The five prayers are expiations for what occurs between them, as long as major sins are avoided.",src:"Muslim"},
+  {num:"Hadith 10",ar:"مَنْ تَوَضَّأَ فَأَحْسَنَ الْوُضُوءَ",en:"Whoever performs wudu and does it well, his sins will leave his body.",src:"Muslim"},
+]},
+riadus:{title:"Riyad as-Salihin — Imam An-Nawawi",items:[
+  {num:"Chapter 1 — Sincerity",ar:"إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ",en:"Actions are by intentions. Sincerity is the foundation of all good deeds.",src:"Bukhari"},
+  {num:"Chapter 2 — Repentance",ar:"كُلُّ بَنِي آدَمَ خَطَّاءٌ وَخَيْرُ الْخَطَّائِينَ التَّوَّابُونَ",en:"Every son of Adam commits sins, and the best of those who sin are those who repent.",src:"Tirmidhi"},
+  {num:"Chapter 3 — Patience",ar:"وَاصْبِرُوا ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",en:"And be patient. Indeed, Allah is with the patient. — Al-Anfal 8:46",src:"Quran"},
+  {num:"Chapter 4 — Truthfulness",ar:"عَلَيْكُمْ بِالصِّدْقِ فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ",en:"You must be truthful, for truthfulness leads to righteousness and righteousness leads to Paradise.",src:"Bukhari & Muslim"},
+  {num:"Chapter 5 — Guarding the Tongue",ar:"مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْراً أَوْ لِيَصْمُتْ",en:"Whoever believes in Allah and the Last Day, let him say good or remain silent.",src:"Bukhari & Muslim"},
+  {num:"Chapter 6 — The Orphan",ar:"كَافِلُ الْيَتِيمِ وَأَنَا فِي الْجَنَّةِ كَهَاتَيْنِ",en:"The guardian of an orphan and I will be in Paradise like these two — pointing to his index and middle fingers.",src:"Bukhari"},
+  {num:"Chapter 7 — Kindness to Parents",ar:"رِضَا اللهِ فِي رِضَا الْوَالِدَيْنِ",en:"The pleasure of Allah lies in the pleasure of the parents, and the anger of Allah lies in the anger of the parents.",src:"Tirmidhi"},
+  {num:"Chapter 8 — Good Character",ar:"إِنَّ مِنْ خِيَارِكُمْ أَحَاسِنَكُمْ أَخْلَاقاً",en:"The best among you are those who have the best manners and character.",src:"Bukhari"},
+  {num:"Chapter 9 — Dhikr",ar:"أَلَا بِذِكْرِ اللهِ تَطْمَئِنُّ الْقُلُوبُ",en:"Verily, in the remembrance of Allah do hearts find rest. — Ar-Ra'd 13:28",src:"Quran"},
+  {num:"Chapter 10 — Du'a",ar:"وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ",en:"And your Lord said: Call upon Me; I will respond to you. — Ghafir 40:60",src:"Quran"},
+]},
+quran40:{title:"Selected Quran Verses",items:[
+  {num:"Al-Fatiha 1:1-7",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",en:"In the name of Allah, the Most Gracious, the Most Merciful. All praise is due to Allah, Lord of all the worlds.",src:"Surah Al-Fatiha"},
+  {num:"Al-Baqarah 2:255 — Ayat al-Kursi",ar:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",en:"Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep.",src:"Surah Al-Baqarah"},
+  {num:"Al-Baqarah 2:286",ar:"لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",en:"Allah does not burden a soul beyond that it can bear.",src:"Surah Al-Baqarah"},
+  {num:"Al-Imran 3:173",ar:"حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",en:"Sufficient for us is Allah, and He is the best Disposer of affairs.",src:"Surah Al-Imran"},
+  {num:"An-Nisa 4:36",ar:"وَاعْبُدُوا اللَّهَ وَلَا تُشْرِكُوا بِهِ شَيْئًا",en:"Worship Allah and associate nothing with Him, and to parents do good, and to relatives, orphans, the needy, the near neighbor, the far neighbor…",src:"Surah An-Nisa"},
+  {num:"Al-Inshirah 94:5-6",ar:"فَإِنَّ مَعَ الْعُسْرِ يُسْرًا إِنَّ مَعَ الْعُسْرِ يُسْرًا",en:"For indeed, with hardship will be ease. Indeed, with hardship will be ease.",src:"Surah Al-Inshirah"},
+  {num:"At-Talaq 65:3",ar:"وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",en:"And whoever relies upon Allah — then He is sufficient for him.",src:"Surah At-Talaq"},
+  {num:"Az-Zumar 39:53",ar:"يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَى أَنفُسِهِمْ",en:"Say: O My servants who have transgressed against themselves — do not despair of the mercy of Allah. Indeed, Allah forgives all sins.",src:"Surah Az-Zumar"},
+]}};
+
+/* ════════════════════════════════════════════
+   QUIZ DATA
+════════════════════════════════════════════ */
+const QUIZ={
+pillars:[
+  {ar:"مَا هُوَ أَوَّلُ رُكْنٍ مِنْ أَرْكَانِ الإِسْلامِ؟",q:"What is the FIRST pillar of Islam?",opts:["Salah (Prayer)","Shahada (Testimony of faith)","Sawm (Fasting)","Hajj"],ans:1,exp:"The Shahada — testifying that there is no god but Allah and Muhammad ﷺ is His messenger — is the first and most important pillar."},
+  {ar:"كَمْ رَكْعَةً فِي صَلَاةِ الظُّهْرِ؟",q:"How many rak'ahs are in Dhuhr prayer?",opts:["2","3","4","6"],ans:2,exp:"Dhuhr prayer has 4 obligatory rak'ahs, prayed after midday."},
+  {ar:"مَتَى يَبْدَأُ رَمَضَانُ؟",q:"When does Ramadan begin?",opts:["At sunrise","At sunset","When the crescent moon is sighted","On the 1st of every month"],ans:2,exp:"Ramadan begins with the sighting of the crescent moon (hilal), marking the 9th month of the Islamic calendar."},
+  {ar:"مَنْ يَجِبُ عَلَيْهِ الزَّكَاةُ؟",q:"Who is obligated to pay Zakat?",opts:["Every Muslim","Muslims who own wealth above the nisab","Only the rich","Scholars only"],ans:1,exp:"Zakat is obligatory for Muslims who own wealth above the nisab (minimum threshold) for one lunar year — typically 2.5% of savings."},
+  {ar:"أَيْنَ يُؤَدَّى الْحَجُّ؟",q:"Where is Hajj performed?",opts:["Medina","Jerusalem","Makkah","Cairo"],ans:2,exp:"Hajj is performed in Makkah, Saudi Arabia — specifically at the Masjid al-Haram and surrounding sites like Mina, Arafat, and Muzdalifah."},
+],
+prophets:[
+  {ar:"مَنْ هُوَ خَاتَمُ الأَنْبِيَاءِ؟",q:"Who is the last and final Prophet?",opts:["Isa (Jesus) ﷺ","Musa (Moses) ﷺ","Ibrahim (Abraham) ﷺ","Muhammad ﷺ"],ans:3,exp:"Prophet Muhammad ﷺ is Khatam an-Nabiyyin — the seal and last of all prophets, sent as a mercy to all of mankind."},
+  {ar:"كَمْ نَبِيًّا ذُكِرَ فِي الْقُرْآنِ؟",q:"How many prophets are mentioned by name in the Quran?",opts:["10","25","50","100"],ans:1,exp:"25 prophets are mentioned by name in the Quran, from Adam ﷺ to Muhammad ﷺ."},
+  {ar:"مَنْ بَنَى الْكَعْبَةَ؟",q:"Who built the Kaaba?",opts:["Muhammad ﷺ","Sulayman ﷺ","Ibrahim & Ismail ﷺ","Nuh ﷺ"],ans:2,exp:"Prophet Ibrahim (Abraham) ﷺ and his son Ismail (Ishmael) ﷺ built the Kaaba as the first house of worship for Allah."},
+  {ar:"مَنْ فَلَقَ الْبَحْرَ؟",q:"Which prophet parted the sea by Allah's command?",opts:["Isa ﷺ","Musa ﷺ","Nuh ﷺ","Dawud ﷺ"],ans:1,exp:"Prophet Musa (Moses) ﷺ struck the sea with his staff by Allah's command and it split, allowing the Children of Israel to cross safely."},
+  {ar:"مَنْ هُوَ أَبُو الأَنْبِيَاءِ؟",q:"Who is called 'the father of the prophets'?",opts:["Adam ﷺ","Nuh ﷺ","Ibrahim ﷺ","Yusuf ﷺ"],ans:2,exp:"Ibrahim (Abraham) ﷺ is known as Khalilullah (Friend of Allah) and Abu al-Anbiya (Father of the Prophets), ancestor of both the Israelite and Arab prophetic lines."},
+],
+quranQ:[
+  {ar:"كَمْ سُورَةً فِي الْقُرْآنِ الْكَرِيمِ؟",q:"How many Surahs (chapters) are in the Quran?",opts:["99","100","114","120"],ans:2,exp:"The Quran contains 114 Surahs, from Al-Fatiha (the Opening) to An-Nas (Mankind)."},
+  {ar:"مَا هِيَ أَطْوَلُ سُورَةٍ فِي الْقُرْآنِ؟",q:"What is the longest Surah in the Quran?",opts:["Al-Imran","Al-Baqarah","An-Nisa","Al-Kahf"],ans:1,exp:"Surah Al-Baqarah is the longest chapter in the Quran with 286 verses. It contains Ayat al-Kursi, one of the most important verses."},
+  {ar:"مَا هِيَ أَقْصَرُ سُورَةٍ فِي الْقُرْآنِ؟",q:"What is the shortest Surah in the Quran?",opts:["Al-Fatiha","Al-Ikhlas","Al-Kawthar","An-Nas"],ans:2,exp:"Surah Al-Kawthar (Chapter 108) is the shortest Surah in the Quran, with only 3 verses."},
+  {ar:"فِي أَيِّ شَهْرٍ نَزَلَ الْقُرْآنُ؟",q:"In which month was the Quran first revealed?",opts:["Muharram","Rajab","Ramadan","Sha'ban"],ans:2,exp:"The first revelation of the Quran came to Prophet Muhammad ﷺ in the month of Ramadan, during the Night of Decree (Laylat al-Qadr)."},
+  {ar:"مَا هِيَ أُمُّ الْقُرْآنِ؟",q:"Which Surah is called 'Umm al-Quran' (Mother of the Quran)?",opts:["Al-Baqarah","Al-Ikhlas","Al-Fatiha","Ya-Sin"],ans:2,exp:"Surah Al-Fatiha is called Umm al-Quran because it summarizes the entire Quran: praise of Allah, His attributes, the straight path, and seeking guidance."},
+],
+sunnah:[
+  {ar:"مَا هُوَ السِّوَاكُ؟",q:"What is a miswak (siwak)?",opts:["A prayer mat","A tooth-cleaning stick","A type of clothing","A scent"],ans:1,exp:"The miswak is a teeth-cleaning twig from the Arak tree. The Prophet ﷺ highly recommended it, saying it purifies the mouth and pleases Allah."},
+  {ar:"بِأَيِّ يَدٍ يَأْكُلُ الْمُسْلِمُ؟",q:"With which hand should a Muslim eat and drink?",opts:["Left","Right","Either","Both together"],ans:1,exp:"Muslims are instructed to eat and drink with the right hand. The Prophet ﷺ said: 'Let one of you eat with his right hand and drink with his right hand.'"},
+  {ar:"مَاذَا يَقُولُ الْمُسْلِمُ عِنْدَ الْعَطَسِ؟",q:"What does a Muslim say when they sneeze?",opts:["SubhanAllah","Alhamdulillah","Bismillah","MashaAllah"],ans:1,exp:"When a Muslim sneezes, they say 'Alhamdulillah' (Praise be to Allah). Others nearby say 'Yarhamukallah' (May Allah have mercy on you)."},
+  {ar:"كَمْ مَرَّةً يَغْسِلُ الْمُسْلِمُ يَدَيْهِ فِي الْوُضُوءِ؟",q:"How many times does a Muslim wash each limb in wudu?",opts:["1 time","2 times","3 times","5 times"],ans:2,exp:"Each part is washed three times in wudu. However, once is the minimum requirement; washing three times is the Sunnah."},
+  {ar:"مَا هِيَ أَفْضَلُ صَلَاةٍ بَعْدَ الْفَرِيضَةِ؟",q:"Which voluntary prayer is best after the obligatory prayers?",opts:["Tarawih","Witr","Tahajjud (Night prayer)","Duha"],ans:2,exp:"Tahajjud — the night prayer — is the most virtuous voluntary prayer. The Prophet ﷺ said it is the best prayer after the obligatory ones. It is prayed in the last third of the night."},
+]};
+
+/* ════════════════════════════════════════════
+   SCIENCE DATA
+════════════════════════════════════════════ */
+const SCI={
+space:[
+  {ico:"🌌",t:"The Universe is Unimaginably Large",txt:"There are more stars in the universe than grains of sand on all Earth's beaches combined! Our galaxy, the Milky Way, contains about 200 billion stars.",isl:"Allah says: 'We have built the heaven with might, and We it is Who make the vast extent thereof.' — Adh-Dhariyat 51:47"},
+  {ico:"☀️",t:"Our Sun — A Giant Star",txt:"The Sun is 109 times wider than Earth. Its light takes 8 minutes to reach us. If the Sun were hollow, about 1 million Earths would fit inside!",isl:"'And He made the sun and the moon for you — both constantly orbiting.' — Ibrahim 14:33"},
+  {ico:"🌙",t:"The Moon — Earth's Companion",txt:"The Moon is about 384,400 km away from Earth. It has no atmosphere, so there is no wind, weather, or sound on the Moon!",isl:"'And the moon — We have determined it in phases until it returns like the old date stalk.' — Ya-Sin 36:39"},
+  {ico:"⭐",t:"Stars Are Suns Too!",txt:"Stars are massive balls of hot plasma. They produce energy through nuclear fusion — combining hydrogen atoms into helium. Some stars are 1000 times bigger than our Sun!",isl:"Allah created stars as beauty for the sky and as guides for travelers."},
+  {ico:"🪐",t:"Saturn's Amazing Rings",txt:"Saturn has rings made of ice and rock particles. Some ring particles are as small as grains of sand; others are as large as houses!",isl:"SubhanAllah! Every planet orbits in its own precise orbit — proof of Allah's perfect design."},
+],
+body:[
+  {ico:"🫀",t:"Your Heart is a Powerful Pump",txt:"Your heart beats about 100,000 times a day — that's 35 million times a year! It pumps about 5 liters of blood every minute through 100,000 km of blood vessels.",isl:"'And in yourselves. Will you not then see?' — Adh-Dhariyat 51:21"},
+  {ico:"🧠",t:"The Incredible Brain",txt:"Your brain contains about 86 billion neurons! It uses only 20 watts of power — less than a light bulb — yet processes information faster than any computer.",isl:"Allah gave humans intelligence ('aql) as one of His greatest gifts. Use it to reflect on His creation!"},
+  {ico:"🦴",t:"Bones — Living Structures",txt:"You have 206 bones in your body. Babies are born with about 270 — some fuse as you grow! Bones are alive and constantly renewing themselves.",isl:"'Then We made the sperm-drop into a clinging clot, and We made the clot into a lump of flesh, and We made bones from the lump of flesh…' — Al-Muminun 23:14"},
+  {ico:"👁️",t:"Your Amazing Eyes",txt:"The human eye can distinguish about 10 million different colors! It can process 36,000 pieces of information per hour. The pupil expands 45% when looking at something interesting.",isl:"'It is He who produced for you hearing and vision and hearts — little are you grateful.' — Al-Muminun 23:78"},
+  {ico:"🫁",t:"Breathing — Non-Stop!",txt:"You breathe about 20,000 times per day without thinking about it! Your lungs have about 600 million alveoli (tiny air sacs) — if spread flat, they'd cover a tennis court.",isl:"Every breath is a gift from Allah. The Prophet ﷺ said: 'Good health is a blessing most people don't appreciate.'"},
+],
+water:[
+  {ico:"💧",t:"Water — The Source of Life",txt:"70% of Earth's surface is covered by water. The human body is about 60% water. Without water, humans can only survive 3-5 days.",isl:"'And We made from water every living thing.' — Al-Anbiya 21:30"},
+  {ico:"🌊",t:"Ocean Depths",txt:"The deepest point in the ocean is Challenger Deep — nearly 11,000 meters down! At that depth, the pressure is 1,000 times greater than at sea level.",isl:"'He released the two seas, meeting side by side. Between them is a barrier they do not transgress.' — Ar-Rahman 55:19-20"},
+  {ico:"🌧️",t:"The Water Cycle",txt:"Earth's water has existed for billions of years — the water you drink may have once been drunk by dinosaurs! It continuously evaporates, forms clouds, and falls as rain.",isl:"'And We send down from the sky water blessed…' — Qaf 50:9"},
+  {ico:"❄️",t:"Ice and Snow",txt:"A single snowflake has 6 sides — yet no two snowflakes are exactly alike! Scientists have confirmed this — each one is uniquely designed by Allah.",isl:"SubhanAllah! Even in a snowflake we see Allah's unique artistry."},
+],
+animals:[
+  {ico:"🐝",t:"Bees — Amazing Engineers",txt:"A honeybee visits 2 million flowers to make just one jar of honey. Bees communicate through a 'waggle dance' to tell other bees where flowers are!",isl:"'And your Lord revealed to the bee: Take for yourself among the mountains, houses…' — An-Nahl 16:68"},
+  {ico:"🐘",t:"Elephants — Giants with Memory",txt:"Elephants can remember other elephants and humans for decades! They grieve their dead and are one of the few animals that recognize themselves in mirrors.",isl:"Elephants are mentioned in the Quran (Surah Al-Fil). Allah protected Makkah from the army of elephants."},
+  {ico:"🦅",t:"Eagles — Masters of the Sky",txt:"Eagles can spot a rabbit from 3 km away! Their eyes are larger than their brains. Some eagles mate for life and return to the same nest every year.",isl:"The eagle represents strength, vision and tawakkul (trust in Allah). Like believers, they soar above difficulties."},
+  {ico:"🐋",t:"Blue Whales — Earth's Largest Animals",txt:"The blue whale is the largest animal ever known — up to 30 meters long and 200 tons! Its heart is the size of a small car and beats just 2 times per minute.",isl:"'And there is no creature on earth but that upon Allah is its provision.' — Hud 11:6"},
+],
+plants:[
+  {ico:"🌳",t:"Trees — The Lungs of Earth",txt:"A single tree can absorb 22 kg of CO2 per year. The oldest known living tree is about 5,000 years old! Trees communicate through underground fungal networks.",isl:"The Prophet ﷺ said: 'If the Day of Judgment comes and one of you has a seedling in his hand, let him plant it.' — Ahmad"},
+  {ico:"🌺",t:"Flowers — Nature's Colors",txt:"There are over 400,000 species of flowering plants! Flowers use color, scent and nectar to attract pollinators. Some flowers only bloom at night!",isl:"'Then let mankind look at his food — how We poured down water in torrents, then split the earth open…' — Abasa 80:24-26"},
+  {ico:"🌿",t:"The Power of Photosynthesis",txt:"Plants capture sunlight and convert it into food through photosynthesis — releasing oxygen as a byproduct. All oxygen we breathe comes from plants and algae!",isl:"SubhanAllah! Allah designed plants as perfect solar-powered factories, producing oxygen for all creatures."},
+],
+weather:[
+  {ico:"⛈️",t:"Lightning — Nature's Power",txt:"A lightning bolt is 5 times hotter than the surface of the Sun! Earth has about 100 lightning strikes every second. Lightning never strikes the same place twice — is a myth!",isl:"'He it is Who shows you lightning as a fear and hope…' — Ar-Ra'd 13:12"},
+  {ico:"🌈",t:"Rainbows — Light's Magic",txt:"Rainbows are full circles — we only see half from the ground! Each person sees their own unique rainbow because it depends on their exact position.",isl:"SubhanAllah! The rainbow is Allah's light passing through water drops — a sign of His beauty."},
+  {ico:"❄️",t:"Snowstorms",txt:"The largest snowflake ever recorded was 38 cm wide! Antarctica holds 90% of Earth's ice. In some places, it snows sideways because of extreme winds.",isl:"'Have you not seen that Allah sends down from the sky water and makes it flow as springs in the earth…' — Az-Zumar 39:21"},
+  {ico:"🌪️",t:"Tornadoes",txt:"Tornadoes can spin at 480 km/h — faster than a racing car! They can last from a few seconds to several hours and travel hundreds of kilometers.",isl:"All weather phenomena are under Allah's command. 'And He sends the winds as good tidings before His mercy.' — Al-A'raf 7:57"},
+]};
+
+/* ════════════════════════════════════════════
+   DATABASE
+════════════════════════════════════════════ */
+const DB={
+donors:[
+  {id:"D001",name:"Ahmad M.",amount:"$50",country:"🇳🇬 Nigeria",status:"active",date:"2026-04-03"},
+  {id:"D002",name:"Fatima A.",amount:"$100",country:"🇸🇦 Saudi Arabia",status:"completed",date:"2026-04-03"},
+  {id:"D003",name:"Youssouf K.",amount:"$25",country:"🇫🇷 France",status:"active",date:"2026-04-02"},
+  {id:"D004",name:"Maryam H.",amount:"$200",country:"🇩🇿 Algeria",status:"active",date:"2026-04-02"},
+  {id:"D005",name:"Ibrahim S.",amount:"$30",country:"🇳🇪 Niger",status:"pending",date:"2026-04-01"},
+  {id:"D006",name:"Khadija L.",amount:"$40",country:"🇨🇦 Canada",status:"completed",date:"2026-04-01"},
+],
+orphans:[
+  {id:"O001",name:"Amina Z.",age:"7",centre:"Zinder Orphanage",needs:"Education",status:"supported"},
+  {id:"O002",name:"Hassan M.",age:"10",centre:"Al-Rahma Centre",needs:"Medical",status:"supported"},
+  {id:"O003",name:"Zaynab B.",age:"5",centre:"Zinder Orphanage",needs:"Nutrition",status:"urgent"},
+  {id:"O004",name:"Yusuf A.",age:"12",centre:"Sahel Project",needs:"School",status:"supported"},
+  {id:"O005",name:"Aisha R.",age:"8",centre:"Al-Rahma Centre",needs:"Clothing",status:"urgent"},
+],
+families:[
+  {id:"F001",name:"Al-Amin Family",size:"6",location:"Zinder",needs:"Food & Shelter",status:"active"},
+  {id:"F002",name:"Moussa Family",size:"4",location:"Sahel",needs:"Food Aid",status:"urgent"},
+  {id:"F003",name:"Bilal Family",size:"8",location:"Agadez",needs:"Medical",status:"active"},
+  {id:"F004",name:"Nour Family",size:"3",location:"Niamey",needs:"Education",status:"completed"},
+],
+users:[
+  {id:"U001",name:"Mnour (Admin)",lang:"FR/EN/HA/AR",role:"Admin",joined:"2026-01-01",status:"active"},
+  {id:"U002",name:"User — Nigeria",lang:"EN/HA",role:"Donor",joined:"2026-02-15",status:"active"},
+  {id:"U003",name:"User — France",lang:"FR/AR",role:"Donor",joined:"2026-03-01",status:"active"},
+  {id:"U004",name:"User — Saudi",lang:"AR/EN",role:"Donor",joined:"2026-03-20",status:"active"},
+]};
+
+let CL='en';
+function T(k){return(L[CL]||L.en)[k]||(L.en[k]||k)}
+
+/* ════════════════════════════════════════════
+   STATE
+════════════════════════════════════════════ */
+let totalRaised=2847,donorCount=127,orphanCount=43,familyCount=18;
+const GOAL=5000;
+let selAmt=0;
+const PRAYER_AR=["الفجر","الشروق","الظهر","العصر","المغرب","العشاء"];
+const PRAYER_T=["05:12","06:38","12:45","16:02","18:54","20:24"];
+const DONORS_LIVE=[
+  {f:"🇳🇬",n:"Ahmad M.",a:50,t:"2m"},{f:"🇸🇦",n:"Fatima A.",a:100,t:"5m"},
+  {f:"🇫🇷",n:"Youssouf K.",a:25,t:"8m"},{f:"🇬🇧",n:"Omar B.",a:75,t:"12m"},
+  {f:"🇩🇿",n:"Maryam H.",a:200,t:"15m"},{f:"🇳🇪",n:"Ibrahim S.",a:30,t:"20m"}
+];
+let quizCat=null,quizIdx=0,quizScore=0,quizQ=[];
+
+/* ════════════════════════════════════════════
+   LANG APPLY
+════════════════════════════════════════════ */
+function SL(lang){
+  CL=lang;
+  document.getElementById('HR').dir=lang==='ar'?'rtl':'ltr';
+  document.getElementById('HR').lang=lang;
+  document.querySelectorAll('.lb').forEach(b=>{
+    b.classList.toggle('on',
+      (lang==='en'&&b.textContent.includes('EN'))||(lang==='ha'&&b.textContent.includes('HA'))||
+      (lang==='fr'&&b.textContent.includes('FR'))||(lang==='ar'&&b.textContent.includes('ع')));
+  });
+  const map={XtagT:'tag',Xloc:'loc',Xhm:'hm',Xpt:'pt',Xlt:'lt',Xls:'ls',Xbk:'bk',Xback:'back',Xback2:'back',
+    Xkttl:'kttl',Xksub:'ksub',XqT:'qT',XqSel:'qSel',Xq1:'q1',Xq2:'q2',Xq3:'q3',Xq4:'q4',Xrestart:'restart',
+    XsciT:'sciT',Xsc1:'sc1',Xsc2:'sc2',Xsc3:'sc3',Xsc4:'sc4',Xsc5:'sc5',Xsc6:'sc6',
+    Xdt:'dt',Xdvtr:'dvtr',Xcl:'cl',Xcd:'cd',Xco:'co',Xcf:'cf',Xpg:'pg',Xwho:'who',
+    Xtor:'tor',Xtnd:'tnd',b1n:'b1n',b1d:'b1d',b2n:'b2n',b2d:'b2d',b3n:'b3n',b3d:'b3d',
+    b4n:'b4n',b4d:'b4d',b5n:'b5n',b5d:'b5d',b6n:'b6n',b6d:'b6d',
+    Xchoose:'choose',Xa5:'a5',Xa10:'a10',Xa25:'a25',Xa50:'a50',Xa100:'a100',Xother:'other',
+    Xcta:'cta',Xsec:'sec',Xrd:'rd',Xdbt:'dbt',XdbD:'dbD',XdbA:'dbA',XdbO:'dbO',XdbF:'dbF',
+    XdtDon:'dtDon',XdtOrph:'dtOrph',XdtFam:'dtFam',XdtUsr:'dtUsr',
+    XdbAdd:'dbAdd',XdbExp:'dbExp',XdbDel:'dbDel',XdbSave:'dbSave',
+    XfName:'fName',XfAmt:'fAmt',XfCnt:'fCnt',XfSts:'fSts',
+    Xphad:'phad',Xhijri:'hm'};
+  Object.entries(map).forEach(([id,k])=>{const e=document.getElementById(id);if(e)e.textContent=T(k)});
+  const navKeys=['Nnp','Nnl','Nnk','Nnd','Nndb'];
+  const navT=T('nav');
+  navKeys.forEach((id,i)=>{const e=document.getElementById(id);if(e)e.textContent=navT[i]});
+  buildPrayerGrid();
+  buildDonorList();
+  buildTicker();
+  renderDbTable('donors');
+}
+
+/* ════════════════════════════════════════════
+   PRAYER GRID
+════════════════════════════════════════════ */
+function buildPrayerGrid(){
+  const names=T('pnames');
+  document.getElementById('prayerGrid').innerHTML=PRAYER_T.map((t,i)=>`
+    <div class="pc ${i===3?'nxt':''}">
+      <div class="pn">${names[i]}${i===3?` <span class="ntag">${T('pnxt')}</span>`:''}</div>
+      <div class="par">${PRAYER_AR[i]}</div>
+      <div class="pt">${t}</div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════
+   NAVIGATION
+════════════════════════════════════════════ */
+function GO(tab,btn){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.bn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pg-'+tab).classList.add('on');
+  btn.classList.add('on');
+  if(tab==='db')renderDbTable(currentDbTab);
+}
+
+/* ════════════════════════════════════════════
+   LIBRARY
+════════════════════════════════════════════ */
+function openBook(key){
+  document.getElementById('lib-home').style.display='none';
+  document.getElementById('bookReader').classList.add('on');
+  document.getElementById('readerTitle').textContent=BOOKS[key].title;
+  currentBook=key;
+  renderHadithList(BOOKS[key].items);
+}
+function closeBook(){
+  document.getElementById('lib-home').style.display='block';
+  document.getElementById('bookReader').classList.remove('on');
+}
+function renderHadithList(items){
+  document.getElementById('hadithList').innerHTML=items.map(h=>`
+    <div class="hadith-item">
+      <div class="h-num">${h.num}</div>
+      <div class="h-arabic">${h.ar}</div>
+      <div class="h-text">${h.en}</div>
+      <div class="h-source">📚 ${h.src}</div>
+    </div>`).join('');
+}
+let currentBook='nawawi';
+function searchHadith(){
+  const q=document.getElementById('hadithSearch').value.toLowerCase();
+  const items=BOOKS[currentBook].items.filter(h=>h.en.toLowerCase().includes(q)||h.ar.includes(q)||h.num.toLowerCase().includes(q));
+  renderHadithList(items);
+}
+function filterLib(){
+  const q=document.getElementById('libSearch').value.toLowerCase();
+  document.querySelectorAll('.book-card').forEach(c=>{
+    const t=c.querySelector('.book-ttl').textContent.toLowerCase();
+    c.style.display=t.includes(q)||q===''?'':'none';
+  });
+}
+
+/* ════════════════════════════════════════════
+   SCIENCE
+════════════════════════════════════════════ */
+function openSci(key){
+  document.getElementById('kids-home').style.display='none';
+  document.getElementById('sciReader').classList.add('on');
+  const titles={space:T('sc1'),body:T('sc2'),water:T('sc3'),animals:T('sc4'),plants:T('sc5'),weather:T('sc6')};
+  document.getElementById('sciTitle').textContent=titles[key]||key;
+  document.getElementById('sciContent').innerHTML=(SCI[key]||[]).map(f=>`
+    <div class="fact-card">
+      <div class="fact-ico">${f.ico}</div>
+      <div class="fact-ttl">${f.t}</div>
+      <div class="fact-txt">${f.txt}</div>
+      <div class="fact-islam">🌙 ${f.isl}</div>
+    </div>`).join('');
+}
+function closeSci(){
+  document.getElementById('kids-home').style.display='block';
+  document.getElementById('sciReader').classList.remove('on');
+}
+
+/* ════════════════════════════════════════════
+   QUIZ
+════════════════════════════════════════════ */
+function startQuiz(cat){
+  quizCat=cat;quizIdx=0;quizScore=0;
+  quizQ=[...QUIZ[cat]].sort(()=>Math.random()-.5).slice(0,5);
+  document.getElementById('quiz-cat-sel').style.display='none';
+  document.getElementById('quizGame').classList.add('on');
+  document.getElementById('quizResult').classList.remove('on');
+  loadQ();
+}
+function loadQ(){
+  if(quizIdx>=quizQ.length){showResult();return;}
+  const q=quizQ[quizIdx];
+  const pct=((quizIdx)/quizQ.length)*100;
+  document.getElementById('qProgFill').style.width=pct+'%';
+  document.getElementById('qNum').textContent=`Q ${quizIdx+1}/${quizQ.length}`;
+  document.getElementById('qScoreDisp').textContent=`⭐ ${quizScore}`;
+  document.getElementById('qArabic').textContent=q.ar;
+  document.getElementById('qTxt').textContent=q.q;
+  document.getElementById('opts').innerHTML=q.opts.map((o,i)=>`
+    <button class="opt" onclick="checkQ(${i},this)">${['A','B','C','D'][i]}. ${o}</button>`).join('');
+  document.getElementById('explainBox').classList.remove('on');
+  document.getElementById('explainBox').textContent='';
+  document.getElementById('nextQBtn').classList.remove('on');
+}
+function checkQ(idx,btn){
+  const q=quizQ[quizIdx];
+  document.querySelectorAll('.opt').forEach(o=>o.classList.add('disabled'));
+  if(idx===q.ans){btn.classList.add('correct');quizScore++;}
+  else{btn.classList.add('wrong');document.querySelectorAll('.opt')[q.ans].classList.add('correct');}
+  document.getElementById('explainBox').textContent='💡 '+q.exp;
+  document.getElementById('explainBox').classList.add('on');
+  document.getElementById('nextQBtn').classList.add('on');
+  document.getElementById('qScoreDisp').textContent=`⭐ ${quizScore}`;
+}
+function nextQ(){quizIdx++;loadQ()}
+function showResult(){
+  document.getElementById('quizGame').classList.remove('on');
+  const r=document.getElementById('quizResult');r.classList.add('on');
+  const pct=quizScore/quizQ.length;
+  const ico=pct>=0.8?'🏆':pct>=0.6?'⭐':'📚';
+  const msg=pct>=0.8?'MashaAllah! Excellent!':pct>=0.6?'Well done! Keep learning!':'Keep studying — knowledge is Sadaqah!';
+  document.getElementById('resIco').textContent=ico;
+  document.getElementById('resTtl').textContent='Quiz Complete!';
+  document.getElementById('resScore').textContent=`${quizScore}/${quizQ.length}`;
+  document.getElementById('resMsg').textContent=msg;
+}
+function resetQuiz(){
+  quizCat=null;quizIdx=0;quizScore=0;
+  document.getElementById('quizGame').classList.remove('on');
+  document.getElementById('quizResult').classList.remove('on');
+  document.getElementById('quiz-cat-sel').style.display='block';
+}
+
+/* ════════════════════════════════════════════
+   DONATE
+════════════════════════════════════════════ */
+function swBene(id,el){
+  document.querySelectorAll('.btab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.bc').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('bc-'+id).classList.add('on');
+}
+function sA(val,btn){
+  document.querySelectorAll('.ab').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');selAmt=val;
+  const ci=document.getElementById('custAmt');
+  ci.style.display=val===0?'block':'none';
+  if(val===0)ci.focus();else ci.value='';
+}
+function donate(){
+  const c=parseFloat(document.getElementById('custAmt').value)||0;
+  const amt=selAmt>0?selAmt:c;
+  if(!amt||amt<=0){openModal('⚠️',T('merr'),T('merrmsg'));return;}
+  totalRaised+=amt;donorCount++;
+  document.getElementById('totalR').textContent=totalRaised.toLocaleString();
+  document.getElementById('donorC').textContent=donorCount;
+  document.getElementById('dbDonors').textContent=donorCount;
+  document.getElementById('dbAmount').textContent='$'+totalRaised.toLocaleString();
+  updateProgress();
+  openModal('🤲',T('mok'),T('mmsg').replace('$AMT','$'+amt));
+  DB.donors.unshift({id:'D'+(DB.donors.length+1).toString().padStart(3,'0'),name:'New Donor',amount:'$'+amt,country:'🌍 Global',status:'active',date:new Date().toISOString().slice(0,10)});
+}
+
+/* ════════════════════════════════════════════
+   COUNTER + PROGRESS
+════════════════════════════════════════════ */
+function animC(id,target){
+  const el=document.getElementById(id);if(!el)return;
+  let c=0,step=Math.max(1,Math.ceil(target/60));
+  const t=setInterval(()=>{c=Math.min(c+step,target);el.textContent=c.toLocaleString();if(c>=target)clearInterval(t)},28);
+}
+function updateProgress(){
+  const pct=Math.min(Math.round((totalRaised/GOAL)*100),100);
+  const f=document.getElementById('progF');if(f)f.style.width=pct+'%';
+  const l=document.getElementById('progLbl');if(l)l.textContent='$'+totalRaised.toLocaleString()+' / $'+GOAL.toLocaleString();
+  const p=document.getElementById('progP');if(p)p.textContent=pct+'%';
+}
+function buildDonorList(){
+  const msgs=T('don_msgs');
+  document.getElementById('donorList').innerHTML=DONORS_LIVE.map(d=>`
+    <div class="di">
+      <div class="dfl2">${d.f}</div>
+      <div class="din"><div class="dnm">${d.n}</div><div class="dmg">${msgs[Math.floor(Math.random()*msgs.length)]}</div></div>
+      <div><div class="dam">$${d.a}</div><div class="dtm">${d.t}</div></div>
+    </div>`).join('');
+}
+function buildTicker(){
+  const msgs=T('don_msgs');
+  document.getElementById('tickerTxt').textContent=DONORS_LIVE.slice(0,5).map(d=>`${d.f} ${d.n} — $${d.a} · ${msgs[0]} · `).join('');
+}
+
+/* ════════════════════════════════════════════
+   DATABASE
+════════════════════════════════════════════ */
+let currentDbTab='donors';
+function dbTab(key,el){
+  currentDbTab=key;
+  document.querySelectorAll('.dbt').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  renderDbTable(key);
+}
+function renderDbTable(key){
+  const data=DB[key]||[];
+  if(!data.length){document.getElementById('dbTable').innerHTML='<tr><td colspan="6" style="text-align:center;padding:20px;color:rgba(255,255,255,.3)">No records</td></tr>';return;}
+  const cols=Object.keys(data[0]);
+  const statusColor={active:'rgba(39,174,96,.3)',urgent:'rgba(192,57,43,.3)',pending:'rgba(201,168,76,.3)',completed:'rgba(18,165,165,.3)',supported:'rgba(39,174,96,.3)'};
+  const sTxt={active:'#2ecc71',urgent:'#e74c3c',pending:'#f39c12',completed:'var(--t2)',supported:'#2ecc71'};
+  document.getElementById('dbTable').innerHTML=`
+    <thead><tr>${cols.map(c=>`<th>${c.toUpperCase()}</th>`).join('')}</tr></thead>
+    <tbody>${data.map(row=>`<tr>${cols.map(c=>{
+      const v=row[c];
+      if(c==='status')return`<td><span class="dbadge" style="background:${statusColor[v]||'rgba(255,255,255,.1)'};color:${sTxt[v]||'#fff'}">${v}</span></td>`;
+      return`<td>${v}</td>`;
+    }).join('')}</tr>`).join('')}</tbody>`;
+}
+function toggleDbForm(){document.getElementById('dbForm').classList.toggle('on')}
+function saveRecord(){
+  const n=document.getElementById('fName').value||'New';
+  const a='$'+(document.getElementById('fAmt').value||'0');
+  const c=document.getElementById('fCnt').value||'Niger';
+  const s=document.getElementById('fSts').value;
+  DB[currentDbTab].push({id:currentDbTab[0].toUpperCase()+(DB[currentDbTab].length+1).toString().padStart(3,'0'),name:n,amount:a,country:c,status:s,date:new Date().toISOString().slice(0,10)});
+  renderDbTable(currentDbTab);
+  document.getElementById('dbForm').classList.remove('on');
+  document.getElementById('dbDonors').textContent=DB.donors.length;
+  openModal('✅','Record Saved!','New record has been added to the database successfully.');
+}
+function exportDb(){
+  const data=DB[currentDbTab];
+  const cols=Object.keys(data[0]||{});
+  const csv=[cols.join(','),...data.map(r=>cols.map(c=>r[c]).join(','))].join('\n');
+  const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+  a.download='nurhealth_'+currentDbTab+'.csv';a.click();
+}
+function clearDbRow(){
+  if(DB[currentDbTab].length>1){DB[currentDbTab].pop();renderDbTable(currentDbTab);openModal('🗑️','Deleted','Last record removed.');}
+}
+
+/* ════════════════════════════════════════════
+   MODAL
+════════════════════════════════════════════ */
+function openModal(ico,ttl,msg){
+  document.getElementById('mico').textContent=ico;
+  document.getElementById('mttl').textContent=ttl;
+  document.getElementById('mmsg').textContent=msg;
+  document.getElementById('modal').classList.add('on');
+}
+function closeModal(){document.getElementById('modal').classList.remove('on')}
+
+/* ════════════════════════════════════════════
+   CLOCK + LIVE UPDATES
+════════════════════════════════════════════ */
+function startClock(){
+  const tick=()=>{const n=new Date();document.getElementById('Xclock').textContent=n.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:true})};
+  tick();setInterval(tick,1000);
+}
+function startLive(){
+  const flags=['🇳🇪','🇸🇦','🇫🇷','🇬🇧','🇩🇿','🇨🇦','🇳🇬','🇲🇦'];
+  const names=['Ali K.','Hassan M.','Aisha B.','Bilal O.','Nour S.','Zainab F.'];
+  setInterval(()=>{
+    const amt=[5,10,20,25,50][Math.floor(Math.random()*5)];
+    totalRaised+=amt;donorCount++;
+    if(Math.random()>.5)orphanCount++;if(Math.random()>.7)familyCount++;
+    document.getElementById('totalR').textContent=totalRaised.toLocaleString();
+    document.getElementById('donorC').textContent=donorCount;
+    document.getElementById('orphanC').textContent=orphanCount;
+    document.getElementById('familyC').textContent=familyCount;
+    document.getElementById('dbDonors').textContent=donorCount;
+    document.getElementById('dbAmount').textContent='$'+totalRaised.toLocaleString();
+    document.getElementById('dbOrph').textContent=orphanCount;
+    document.getElementById('dbFam').textContent=familyCount;
+    updateProgress();
+    DONORS_LIVE.unshift({f:flags[Math.floor(Math.random()*flags.length)],n:names[Math.floor(Math.random()*names.length)],a:amt,t:'just now'});
+    if(DONORS_LIVE.length>8)DONORS_LIVE.pop();
+    buildDonorList();buildTicker();
+  },8000);
+}
+/* ════════════════════════════════════════════
+   DATE HIJRI AUTOMATIQUE + JOURS BLANCS
+════════════════════════════════════════════ */
+
+function updateHijriDate() {
+  const today = new Date();
+  const day = today.getDate();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+
+  // Utiliser l'API Aladhan pour la date hijri exacte
+  fetch(`https://api.aladhan.com/v1/gToH?date=${day}-${month}-${year}`)
+    .then(r => r.json())
+    .then(data => {
+      const h = data.data.hijri;
+      const g = data.data.gregorian;
+      
+      const hijriDay = parseInt(h.day);
+      const hijriMonth = h.month.en;
+      const hijriMonthAr = h.month.ar;
+      const hijriYear = h.year;
+
+      // Mise à jour affichage
+      const arEl = document.querySelector('.h-ar');
+      if (arEl) arEl.textContent = ${hijriDay} ${hijriMonthAr} ${hijriYear};
+      
+      const moEl = document.getElementById('Xhm');
+      if (moEl) moEl.textContent = ${hijriMonth} ${hijriYear} AH;
+      
+      const grEl = document.querySelector('.h-gr');
+      if (grEl) grEl.textContent = ${g.weekday.en}, ${g.months.en} ${g.day}, ${g.year};
+
+      const hijriEl = document.getElementById('Xhijri');
+      if (hijriEl) hijriEl.textContent = ${hijriDay} ${hijriMonth} ${hijriYear};
+
+      // Jours blancs
+      const isJourBlanc = (hijriDay === 13 || hijriDay === 14 || hijriDay === 15);
+      const demainJourBlanc = (hijriDay === 12 || hijriDay === 13 || hijriDay === 14);
+
+      const oldRappel = document.getElementById('joursBlancsRappel');
+      if (oldRappel) oldRappel.remove();
+
+      const rappel = document.createElement('div');
+      rappel.id = 'joursBlancsRappel';
+      rappel.style.cssText = `
+        background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
+        border: 1px solid rgba(212,175,55,0.4);
+        border-radius: 12px; padding: 12px; margin-bottom: 12px;
+        text-align: center;
+      `;
+
+      if (isJourBlanc) {
+        rappel.innerHTML = `
+          <div style="font-size:20px;margin-bottom:5px">🌕</div>
+          <div style="color:#D4AF37;font-weight:800;font-size:13px">Jour Blanc — اليوم الأبيض</div>
+          <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top:4px">
+            Aujourd'hui est le <strong style="color:#D4AF37">${hijriDay}ème jour</strong> de ${hijriMonth}.<br>
+            C'est un jour blanc — <strong>jeûne recommandé</strong> 🤲
+          </div>
+          <div style="color:rgba(255,255,255,0.4);font-size:10px;margin-top:6px">
+            "Le Prophète ﷺ jeûnait les jours blancs : 13, 14 et 15 de chaque mois"
+          </div>
+        `;
+      } else if (demainJourBlanc) {
+        rappel.innerHTML = `
+          <div style="font-size:20px;margin-bottom:5px">🌔</div>
+          <div style="color:#D4AF37;font-weight:800;font-size:13px">Rappel — Jours Blancs demain</div>
+          <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top:4px">
+            Demain sera le <strong style="color:#D4AF37">${hijriDay+1}ème jour</strong> de ${hijriMonth}.<br>
+            Préparez-vous pour le <strong>jeûne des jours blancs</strong> 🌙
+          </div>
+        `;
+      } else {
+        const prochainJourBlanc = hijriDay < 13 ? 13 - hijriDay : (30 - hijriDay + 13);
+        rappel.innerHTML = `
+          <div style="font-size:20px;margin-bottom:5px">🌙</div>
+          <div style="color:rgba(255,255,255,0.6);font-weight:700;font-size:12px">Prochains Jours Blancs</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:4px">
+            Dans <strong style="color:#D4AF37">${prochainJourBlanc} jour(s)</strong> — 
+            13, 14, 15 ${hijriMonth} ${hijriYear}
+          </div>
+        `;
+      }
+
+      const hijriBox = document.querySelector('.hijri-box');
+      if (hijriBox) hijriBox.after(rappel);
+    })
+    .catch(err => console.error('Erreur date hijri:', err));
+}
+/* ════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════ */
+window.addEventListener('DOMContentLoaded',()=>{
+  SL('en');
+  updateHijriDate();
+  animC('totalR',totalRaised);animC('donorC',donorCount);
+  animC('orphanC',orphanCount);animC('familyC',familyCount);
+  updateProgress();startClock();startLive();
+  document.getElementById('custAmt').style.display='none';
+  renderDbTable('donors');
+  initPWA();
+});
+
+/* ════════════════════════════════════════════
+   PWA — SERVICE WORKER & INSTALL PROMPT
+════════════════════════════════════════════ */
+let deferredPrompt=null;
+
+function initPWA(){
+  // Enregistrement du Service Worker
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg=>console.log('[NurHealth] SW enregistré:',reg.scope))
+      .catch(err=>console.warn('[NurHealth] SW échec:',err));
+  }
+
+  // Capturer l'événement d'installation
+  window.addEventListener('beforeinstallprompt',e=>{
+    e.preventDefault();
+    deferredPrompt=e;
+    showInstallBanner();
+  });
+
+  // Quand l'app est installée
+  window.addEventListener('appinstalled',()=>{
+    document.getElementById('installBanner').style.display='none';
+    console.log('[NurHealth] App installée avec succès!');
+  });
+}
+
+function showInstallBanner(){
+  const banner=document.getElementById('installBanner');
+  if(banner){banner.style.display='flex';}
+}
+
+function installApp(){
+  if(!deferredPrompt)return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(choice=>{
+    if(choice.outcome==='accepted'){
+      console.log('[NurHealth] Installation acceptée');
+    }
+    deferredPrompt=null;
+    document.getElementById('installBanner').style.display='none';
+  });
+}
+
+function dismissBanner(){
+  document.getElementById('installBanner').style.display='none';
+}
+function reserverRdv(medecin, montant) {
+  document.getElementById('rdvMedecin').textContent = medecin + ' (' + montant + ' FCFA)';
+  document.getElementById('rdvForm').style.display = 'block';
+  document.getElementById('rdvForm').scrollIntoView({behavior:'smooth'});
+}
+
+/* ════════════════════════════════════════════
+   TÉLÉMÉDECINE — NAVIGATION PAR ONGLETS
+════════════════════════════════════════════ */
+function showConsultTab(tab, btn){
+  document.querySelectorAll('.ctab-content').forEach(c=>c.classList.remove('on'));
+  document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('ctab-'+tab).classList.add('on');
+  if(btn) btn.classList.add('on');
+  if(tab==='maladies') renderMaladies();
+  if(tab==='carte') renderCentres();
+}
+
+/* ════════════════════════════════════════════
+   FORMULAIRE RDV
+════════════════════════════════════════════ */
+function ouvrirRdv(nom, spec, montant, tel){
+  document.getElementById('rdvMedecin').textContent = nom + ' — ' + montant + ' FCFA';
+  document.getElementById('rdvForm').style.display = 'block';
+  document.getElementById('rdvDate').min = new Date().toISOString().split('T')[0];
+  document.getElementById('rdvForm').scrollIntoView({behavior:'smooth'});
+}
+
+async function confirmerRdv() {
+  const nom = document.getElementById('rdvNom').value.trim();
+  const tel = document.getElementById('rdvTel').value.trim();
+  const date = document.getElementById('rdvDate').value;
+  const symp = document.getElementById('rdvSymp')?.value.trim()||'';
+  const methode = document.getElementById('rdvMethode').value;
+  const ref = document.getElementById('rdvRef').value.trim();
+  const medecinText = document.getElementById('rdvMedecin').textContent;
+
+  if(!nom||!tel){alert('⚠️ Veuillez remplir votre nom et téléphone');return;}
+  if(!date){alert('⚠️ Veuillez choisir une date');return;}
+
+  const btn = document.querySelector('#rdvForm button');
+  btn.textContent = '⏳ Enregistrement...';
+  btn.disabled = true;
+
+  // Sauvegarde locale (IndexedDB via localStorage simplifié)
+  const rdv = {id:Date.now(), medecin:medecinText, nom, tel, date, symp, methode, ref, statut:'En attente'};
+  const rdvs = JSON.parse(localStorage.getItem('nurhealth_rdvs')||'[]');
+  rdvs.push(rdv);
+  localStorage.setItem('nurhealth_rdvs', JSON.stringify(rdvs));
+
+  // Tentative Firebase si disponible
+  if(window.confirmerRdvFirebase){
+    await window.confirmerRdvFirebase(nom, tel, medecinText, '', methode, ref).catch(()=>{});
+  }
+
+  alert('✅ RDV enregistré avec succès !\n\nMédecin : ' + medecinText + '\nDate : ' + date + '\n\nNotre équipe vous contactera bientôt. JazakAllahu Khayran 🤲');
+
+  btn.textContent = '✅ Confirmer le RDV';
+  btn.disabled = false;
+  document.getElementById('rdvForm').style.display = 'none';
+  ['rdvNom','rdvTel','rdvDate','rdvRef'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+  if(document.getElementById('rdvSymp')) document.getElementById('rdvSymp').value='';
+}
+
+/* ════════════════════════════════════════════
+   BASE DE DONNÉES MÉDICALE — MALADIES NIGER
+════════════════════════════════════════════ */
+const MALADIES = [
+  {
+    id:'paludisme', ico:'🦟', nom:'Paludisme', cat:'Maladie parasitaire',
+    symptomes:'Fièvre élevée, frissons, maux de tête, vomissements, fatigue intense',
+    description:'Le paludisme est causé par le parasite Plasmodium transmis par les moustiques anophèles femelles. C\'est la maladie la plus fréquente au Niger.',
+    causes:'Piqûre de moustique anophèle infecté, surtout la nuit en saison des pluies',
+    traitement:'Artémisinine (ACT) — traitement de première ligne. Consulter un médecin immédiatement. Ne pas s\'automédiquer.',
+    prevention:'Moustiquaire imprégnée, répulsif anti-moustiques, éliminer les eaux stagnantes, habits longs le soir',
+    medicaments:'Artésunate + Amodiaquine (ASAQ), Luméfantrine + Artéméther',
+    urgence: true, urgMsg:'⚠️ Fièvre + frissons = consultez IMMÉDIATEMENT. Peut être mortel sans traitement.'
+  },
+  {
+    id:'typhoide', ico:'🧫', nom:'Fièvre Typhoïde', cat:'Maladie bactérienne',
+    symptomes:'Fièvre prolongée (39-40°C), maux de tête, douleurs abdominales, constipation ou diarrhée, langue chargée',
+    description:'Infection bactérienne grave causée par Salmonella typhi. Se transmet par l\'eau et les aliments contaminés.',
+    causes:'Eau non potable, aliments mal cuits, manque d\'hygiène, contact avec une personne infectée',
+    traitement:'Antibiotiques (Azithromycine, Ciprofloxacine) pendant 7-14 jours selon prescription médicale',
+    prevention:'Eau bouillie ou filtrée, aliments bien cuits, lavage des mains, vaccination',
+    medicaments:'Azithromycine 500mg, Ciprofloxacine 500mg (sur prescription)',
+    urgence: true, urgMsg:'⚠️ Fièvre prolongée > 5 jours = consultez d\'urgence.'
+  },
+  {
+    id:'cholera', ico:'💧', nom:'Choléra', cat:'Maladie bactérienne',
+    symptomes:'Diarrhée aqueuse abondante (eau de riz), vomissements, déshydratation rapide, crampes musculaires',
+    description:'Infection intestinale aiguë causée par Vibrio cholerae. Peut être mortelle en quelques heures sans réhydratation.',
+    causes:'Eau contaminée, aliments souillés, mauvaise hygiène',
+    traitement:'Réhydratation orale urgente (SRO), antibiotiques sur prescription. Hospitalisation souvent nécessaire.',
+    prevention:'Eau potable seulement, cuisson des aliments, lavage des mains, hygiène stricte',
+    medicaments:'Solution de Réhydratation Orale (SRO), Zinc, Doxycycline (antibiotique)',
+    urgence: true, urgMsg:'🚨 URGENCE ABSOLUE — Allez aux urgences immédiatement. Peut tuer en quelques heures.'
+  },
+  {
+    id:'meningite', ico:'🧠', nom:'Méningite', cat:'Maladie grave',
+    symptomes:'Fièvre brutale, maux de tête intenses, raideur de la nuque, vomissements, sensibilité à la lumière, confusion',
+    description:'Inflammation des méninges (membranes entourant le cerveau). Très fréquente dans la ceinture méningitique africaine dont fait partie le Niger.',
+    causes:'Bactéries (méningocoque), virus, champignons. Se transmet par voie aérienne.',
+    traitement:'Urgence médicale absolue. Antibiotiques IV en milieu hospitalier.',
+    prevention:'Vaccination (méningite ACWY), éviter les endroits bondés en période épidémique',
+    medicaments:'Ceftriaxone IV (hospitalier uniquement)',
+    urgence: true, urgMsg:'🚨 URGENCE VITALE — Raideur de nuque + fièvre = APPEL DU 15 IMMÉDIATEMENT.'
+  },
+  {
+    id:'diarrhee', ico:'🤢', nom:'Diarrhée / Gastro-entérite', cat:'Maladie digestive',
+    symptomes:'Selles liquides fréquentes, crampes abdominales, nausées, vomissements, déshydratation',
+    description:'Très fréquente chez les enfants au Niger. Principale cause de mortalité infantile évitable.',
+    causes:'Eau contaminée, aliments mal conservés, manque d\'hygiène, rotavirus, bactéries',
+    traitement:'Réhydratation orale (SRO), Zinc (enfants), continuer l\'allaitement, éviter les aliments gras',
+    prevention:'Eau potable, lavage des mains, hygiène alimentaire, vaccin rotavirus',
+    medicaments:'SRO (Sel de Réhydratation Orale), Zinc 20mg/jour pendant 10 jours (enfants)',
+    urgence: false
+  },
+  {
+    id:'hypertension', ico:'❤️', nom:'Hypertension Artérielle', cat:'Maladie chronique',
+    symptomes:'Maux de tête, vertiges, vision floue, saignements de nez, fatigue — souvent AUCUN symptôme',
+    description:'Pression artérielle chroniquement élevée. Très répandue et souvent non diagnostiquée en Afrique subsaharienne.',
+    causes:'Alimentation salée, obésité, sédentarité, stress, facteurs génétiques, âge',
+    traitement:'Médicaments antihypertenseurs à vie, régime alimentaire, exercice physique, contrôle régulier',
+    prevention:'Réduire le sel, exercice 30min/jour, maintenir un poids normal, éviter alcool et tabac',
+    medicaments:'Amlodipine, Captopril, Hydrochlorothiazide (sur prescription uniquement)',
+    urgence: false
+  },
+  {
+    id:'diabete', ico:'🩸', nom:'Diabète', cat:'Maladie chronique',
+    symptomes:'Soif intense, urines fréquentes, fatigue, perte de poids, vision floue, cicatrisation lente',
+    description:'Maladie chronique caractérisée par un taux de sucre élevé dans le sang. En augmentation rapide en Afrique.',
+    causes:'Génétique, obésité, sédentarité, alimentation riche en sucre (type 2). Auto-immune (type 1).',
+    traitement:'Médicaments (Metformine, insuline), régime alimentaire strict, exercice, contrôle glycémique régulier',
+    prevention:'Alimentation équilibrée, activité physique, maintenir un poids sain, dépistage régulier',
+    medicaments:'Metformine 500mg (type 2), Insuline (type 1 et cas graves) — sur prescription',
+    urgence: false
+  },
+  {
+    id:'paludisme-enfant', ico:'👶', nom:'Paludisme Infantile', cat:'Pédiatrie',
+    symptomes:'Fièvre, pleurs excessifs, refus de téter, convulsions, vomissements, pâleur',
+    description:'Le paludisme grave touche surtout les enfants de moins de 5 ans. Première cause de mortalité infantile au Niger.',
+    causes:'Piqûre de moustique anophèle, immunité non développée chez le nourrisson',
+    traitement:'Artésunate injectable en urgence hospitalière. Artémisinine orale si forme non compliquée.',
+    prevention:'Moustiquaire pour le berceau, répulsifs adaptés, vêtements couvrants',
+    medicaments:'Artésunate injectable (hospitalier), ASAQ pédiatrique adapté au poids',
+    urgence: true, urgMsg:'⚠️ Enfant avec fièvre = consultez en URGENCE. Ne jamais attendre.'
+  },
+  {
+    id:'malnutrition', ico:'🍎', nom:'Malnutrition', cat:'Nutrition',
+    symptomes:'Maigreur extrême, cheveux décolorés, œdèmes des membres, apathie, retard de croissance',
+    description:'Problème majeur de santé publique au Niger, particulièrement en période de soudure. Affecte surtout les enfants.',
+    causes:'Insuffisance alimentaire, maladies à répétition, pauvreté, sevrage précoce',
+    traitement:'Aliments thérapeutiques prêts à l\'emploi (ATPE/Plumpy\'nut), réhydratation, traitement des infections',
+    prevention:'Allaitement maternel exclusif jusqu\'à 6 mois, alimentation diversifiée, suivi nutritionnel',
+    medicaments:'Plumpy\'nut (ATPE), Vitamine A, Zinc, Amoxicilline (prévention infections)',
+    urgence: true, urgMsg:'⚠️ Malnutrition sévère = urgence pédiatrique. Centre Nutrition de Zinder : +227 20 51 00 33'
+  },
+  {
+    id:'tuberculose', ico:'🫁', nom:'Tuberculose (TB)', cat:'Maladie pulmonaire',
+    symptomes:'Toux chronique (> 3 semaines), crachats parfois sanglants, fièvre nocturne, sueurs nocturnes, perte de poids',
+    description:'Infection bactérienne grave des poumons causée par Mycobacterium tuberculosis. Fréquente au Niger.',
+    causes:'Contact avec une personne tuberculeuse, immunodépression (VIH), malnutrition',
+    traitement:'Traitement long (6 mois minimum), combinaison d\'antibiotiques, gratuit au Niger dans les centres de santé',
+    prevention:'Vaccination BCG (nourrissons), aération des logements, détection précoce',
+    medicaments:'RHZE (Rifampicine + Isoniazide + Pyrazinamide + Éthambutol) — gratuit dans les centres de santé',
+    urgence: false
+  }
+];
+
+let maladiesFiltrees = [...MALADIES];
+
+function renderMaladies(liste){
+  const l = liste || maladiesFiltrees;
+  document.getElementById('maladieDetail').style.display='none';
+  document.getElementById('maladieList').style.display='block';
+  document.getElementById('maladieList').innerHTML = l.map(m=>`
+    <div class="mal-card" onclick="voirMaladie('${m.id}')">
+      <div class="mal-top">
+        <div class="mal-ico">${m.ico}</div>
+        <div>
+          <div class="mal-name">${m.nom}</div>
+          <div class="mal-cat">${m.cat}</div>
+        </div>
+        ${m.urgence?'<span style="margin-left:auto;font-size:10px;color:#e74c3c;font-weight:800;background:rgba(231,76,60,.1);padding:3px 7px;border-radius:10px">⚠️ URGENT</span>':''}
+      </div>
+      <div class="mal-symp">🔍 ${m.symptomes.substring(0,80)}...</div>
+    </div>
+  `).join('');
+}
+
+function filtrerMaladies(){
+  const q = document.getElementById('maladieSearch').value.toLowerCase();
+  maladiesFiltrees = q ? MALADIES.filter(m=>
+    m.nom.toLowerCase().includes(q)||
+    m.symptomes.toLowerCase().includes(q)||
+    m.cat.toLowerCase().includes(q)
+  ) : [...MALADIES];
+  renderMaladies();
+}
+
+function voirMaladie(id){
+  const m = MALADIES.find(x=>x.id===id);
+  if(!m) return;
+  document.getElementById('maladieList').style.display='none';
+  const d = document.getElementById('maladieDetail');
+  d.style.display='block';
+  d.innerHTML=`
+    <button onclick="renderMaladies()" style="margin-bottom:12px;padding:7px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:rgba(255,255,255,.6);cursor:pointer;font-size:12px;font-family:'Nunito',sans-serif">← Retour</button>
+    <div class="mal-detail">
+      <div style="font-size:36px;text-align:center;margin-bottom:8px">${m.ico}</div>
+      <div class="mal-d-ttl" style="text-align:center;font-size:16px">${m.nom}</div>
+      <div style="text-align:center;font-size:11px;color:rgba(255,255,255,.4);margin-bottom:12px">${m.cat}</div>
+      <div class="mal-section">
+        <div class="mal-section-ttl">📖 Description</div>
+        <div class="mal-section-txt">${m.description}</div>
+      </div>
+      <div class="mal-section">
+        <div class="mal-section-ttl">🔍 Symptômes</div>
+        <div class="mal-section-txt">${m.symptomes}</div>
+      </div>
+      <div class="mal-section">
+        <div class="mal-section-ttl">⚠️ Causes</div>
+        <div class="mal-section-txt">${m.causes}</div>
+      </div>
+      <div class="mal-section">
+        <div class="mal-section-ttl">💊 Traitement</div>
+        <div class="mal-section-txt">${m.traitement}</div>
+      </div>
+      <div class="mal-section">
+        <div class="mal-section-ttl">🛡️ Prévention</div>
+        <div class="mal-section-txt">${m.prevention}</div>
+      </div>
+      <div class="mal-section">
+        <div class="mal-section-ttl">💉 Médicaments courants</div>
+        <div class="mal-section-txt">${m.medicaments}</div>
+      </div>
+      ${m.urgence?`<div class="mal-urgent">${m.urgMsg}</div>`:''}
+      <button onclick="showConsultTab('medecins',document.querySelector('.ctab'))" style="width:100%;margin-top:12px;padding:10px;background:linear-gradient(135deg,#0d6e6e,#12a5a5);border:none;border-radius:9px;color:#fff;font-weight:800;cursor:pointer;font-size:12px">
+        👨‍⚕️ Consulter un médecin pour ${m.nom}
+      </button>
+    </div>
+  `;
+  d.scrollIntoView({behavior:'smooth'});
+}
+
+/* ════════════════════════════════════════════
+   CARTE — CENTRES DE SANTÉ ZINDER
+════════════════════════════════════════════ */
+const CENTRES = [
+  {ico:'🏥', nom:'Hôpital National de Zinder', type:'Hôpital de référence', dist:'Centre-ville', tel:'+22720510033', maps:'https://maps.app.goo.gl/zinderHopital'},
+  {ico:'🏪', nom:'Centre de Santé Intégré — Zinder', type:'Centre de santé', dist:'Zinder Nord', tel:'+22790909512', maps:''},
+  {ico:'👶', nom:'Maternité Régionale de Zinder', type:'Maternité', dist:'Centre-ville', tel:'+22796307928', maps:''},
+  {ico:'💊', nom:'Pharmacie Centrale — Zinder', type:'Pharmacie', dist:'Marché Central', tel:'+22720511234', maps:''},
+  {ico:'🔬', nom:'Laboratoire d\'Analyses — Zinder', type:'Laboratoire', dist:'Quartier Zengou', tel:'+22790111222', maps:''},
+  {ico:'🧒', nom:'Centre Nutrition Thérapeutique', type:'Nutrition / Pédiatrie', dist:'Zinder Sud', tel:'+22720510033', maps:''},
+  {ico:'🦟', nom:'Programme Paludisme PNLP', type:'Santé publique', dist:'Direction Régionale', tel:'+22720512345', maps:''},
+];
+
+function renderCentres(){
+  document.getElementById('centresList').innerHTML = CENTRES.map(c=>`
+    <div class="centre-card">
+      <div class="centre-ico">${c.ico}</div>
+      <div class="centre-info">
+        <div class="centre-name">${c.nom}</div>
+        <div class="centre-type">${c.type}</div>
+        <div class="centre-dist">📍 ${c.dist}</div>
+      </div>
+      <a href="tel:${c.tel}" class="centre-btn">📞</a>
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════════════════════════
+   IA MÉDICALE — ASSISTANT CLAUDE
+════════════════════════════════════════════ */
+const IA_SYSTEM = `Tu es un assistant médical de l'application NurHealth, basé à Zinder, Niger.
+Tu aides les patients avec des informations médicales générales adaptées au contexte nigérien.
+Les maladies fréquentes sont : paludisme, typhoïde, choléra, méningite, diarrhée, malnutrition, tuberculose, hypertension, diabète.
+Tu réponds toujours en français, de façon claire et simple. Tes réponses sont courtes (max 150 mots).
+Tu rappelles TOUJOURS de consulter un médecin pour un diagnostic précis.
+Tu mentionnes les numéros d'urgence locaux si nécessaire (SAMU: 15, Hôpital Zinder: +227 20 51 00 33).
+Tu intègres parfois des rappels islamiques de confiance en Allah et patience (sunnah médicale du Prophète ﷺ).
+Tu ne prescris jamais de médicaments, tu informes seulement.`;
+
+let iaHistorique = [];
+
+async function envoyerIA(){
+  const input = document.getElementById('iaInput');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value='';
+
+  const box = document.getElementById('iaChatBox');
+
+  // Message utilisateur
+  box.innerHTML += `
+    <div class="ia-msg ia-user">
+      <div class="ia-ava">👤</div>
+      <div class="ia-txt">${msg}</div>
+    </div>`;
+
+  // Indicateur chargement
+  const loadId = 'load_'+Date.now();
+  box.innerHTML += `
+    <div class="ia-msg ia-bot" id="${loadId}">
+      <div class="ia-ava">🤖</div>
+      <div class="ia-txt ia-loading">
+        <div class="ia-dot"></div><div class="ia-dot"></div><div class="ia-dot"></div>
+      </div>
+    </div>`;
+  box.scrollTop = box.scrollHeight;
+
+  iaHistorique.push({role:'user', content:msg});
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:300,
+        system: IA_SYSTEM,
+        messages: iaHistorique
+      })
+    });
+    const data = await resp.json();
+    const rep = data.content?.[0]?.text || 'Désolé, je ne peux pas répondre pour le moment.';
+    iaHistorique.push({role:'assistant', content:rep});
+
+    document.getElementById(loadId).outerHTML = `
+      <div class="ia-msg ia-bot">
+        <div class="ia-ava">🤖</div>
+        <div class="ia-txt">${rep.replace(/\n/g,'<br>')}</div>
+      </div>`;
+  } catch(e){
+    // Réponse locale si API indisponible
+    const repLocale = reponseMedicaleLocale(msg);
+    document.getElementById(loadId).outerHTML = `
+      <div class="ia-msg ia-bot">
+        <div class="ia-ava">🤖</div>
+        <div class="ia-txt">${repLocale}</div>
+      </div>`;
+  }
+  box.scrollTop = box.scrollHeight;
+}
+
+function quickIA(msg){
+  document.getElementById('iaInput').value = msg;
+  envoyerIA();
+}
+
+function reponseMedicaleLocale(msg){
+  const m = msg.toLowerCase();
+  if(m.includes('fièvre')||m.includes('temperature')||m.includes('chaud'))
+    return '🌡️ La fièvre peut indiquer un paludisme, une typhoïde ou une infection. <strong>Consultez immédiatement un médecin</strong> si la fièvre dépasse 38.5°C ou dure plus de 2 jours. Hôpital Zinder : <strong>+227 20 51 00 33</strong>. En attendant, restez hydraté(e). "Toute maladie a un remède." — Prophète Muhammad ﷺ';
+  if(m.includes('diarrhée')||m.includes('ventre')||m.includes('abdominal'))
+    return '🤢 Pour les douleurs abdominales ou diarrhées : buvez beaucoup de <strong>Solution de Réhydratation Orale (SRO)</strong>. Si présence de sang, fièvre ou > 24h sans amélioration, consultez d\'urgence. CSI Zinder : <strong>+227 90 90 95 12</strong>. Évitez les aliments gras.';
+  if(m.includes('enfant')||m.includes('bébé')||m.includes('nourrisson'))
+    return '👶 Pour un enfant malade au Niger, <strong>ne jamais attendre</strong>. Le paludisme et la malnutrition peuvent évoluer très vite. Centre Pédiatrique Zinder : <strong>+227 20 51 00 33</strong>. Maintenez l\'allaitement si possible.';
+  if(m.includes('grossesse')||m.includes('enceinte')||m.includes('accouche'))
+    return '🤱 Dr. Sahirou Aminatou, gynécologue à Zinder, est disponible. <strong>Appelez : +227 96 30 79 28</strong>. En cas de douleurs fortes, saignements ou absence de mouvements du bébé — allez aux urgences IMMÉDIATEMENT. Maternité Zinder : <strong>15 ou +227 96 30 79 28</strong>';
+  if(m.includes('mal de tête')||m.includes('tête')||m.includes('migraine'))
+    return '🤕 Maux de tête + fièvre + raideur du cou = <strong>méningite possible — URGENCE</strong>. Appelez le <strong>15</strong>. Maux de tête simples : repos, hydratation, Paracétamol 500mg si adulte. Persistance > 2 jours = consultez un médecin.';
+  return '🤖 Je suis l\'assistant NurHealth. Pour une réponse précise, décrivez vos symptômes en détail. Je vous rappelle que <strong>seul un médecin peut poser un diagnostic</strong>. En urgence : <strong>15 (SAMU)</strong> ou Hôpital Zinder : <strong>+227 20 51 00 33</strong>. "Allah n\'a pas créé de maladie sans créer de remède." — Prophète Muhammad ﷺ';
+}
+</script>
+
+<!-- BANNIÈRE D'INSTALLATION PWA -->
+<div id="installBanner" style="
+  display:none;position:fixed;bottom:72px;left:50%;transform:translateX(-50%);
+  width:calc(100% - 24px);max-width:406px;z-index:500;
+  background:linear-gradient(135deg,#0d2244,#0a1628);
+  border:1px solid rgba(201,168,76,.45);border-radius:14px;
+  padding:12px 14px;display:none;align-items:center;gap:10px;
+  box-shadow:0 8px 32px rgba(0,0,0,.6);backdrop-filter:blur(12px);">
+  <div style="font-size:28px">📲</div>
+  <div style="flex:1">
+    <div style="font-family:'Cinzel',serif;font-size:12px;color:#c9a84c;font-weight:700;margin-bottom:2px">Install NurHealth</div>
+    <div style="font-size:10px;color:rgba(255,255,255,.55)">Add to your home screen — works offline!</div>
+  </div>
+  <button onclick="installApp()" style="
+    padding:7px 13px;border-radius:8px;border:none;cursor:pointer;
+    background:linear-gradient(135deg,#0d6e6e,#12a5a5);
+    color:#fff;font-family:'Cinzel',serif;font-size:10.5px;font-weight:700;
+    white-space:nowrap;box-shadow:0 2px 10px rgba(13,110,110,.4)">Install ✓</button>
+  <button onclick="dismissBanner()" style="
+    background:transparent;border:none;cursor:pointer;
+    color:rgba(255,255,255,.35);font-size:16px;padding:4px;line-height:1">✕</button>
+</div>
+</body>
+</html>
